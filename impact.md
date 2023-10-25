@@ -37,8 +37,8 @@ Climate change can affect the distribution and prevalence of allergenic pollen-p
 
 Addressing climate change is important for protecting public health and reducing the risk of various respiratory ailments.
 
-## Link to backend
-%%HTML
+## Enter a state name and see how many cases they have! 
+
 <head>
     <title>State Input</title>
 </head>
