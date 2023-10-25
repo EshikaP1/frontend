@@ -2,8 +2,7 @@
 layout: default
 title: Climate
 ---
-
-# Understanding Climate Change
+![Alt text](<images/Lung Cancer (1).png>)
 
 <html>
 <head>
