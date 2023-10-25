@@ -64,3 +64,66 @@ Here are other links to learn more about lung cancer!
 - [Cancer Society](https://www.cancer.org/cancer/types/lung-cancer/about/what-is.html)
 - [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/lung-cancer/symptoms-causes/syc-20374620)
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer)
+
+<body>
+    <h1>Lung Cancer Quiz</h1>
+
+    <div id="questions">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Which is the most common type of lung cancer?</p>
+            <div class="options">
+                <input type="checkbox" id="q1-option1" data-correct="true"> <label for="q1-option1">Non-Small Cell Lung Cancer (NSCLC)</label><br>
+                <input type="checkbox" id="q1-option2"> <label for="q1-option2">Small Cell Lung Cancer (SCLC)</label><br>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>What is the primary cause of lung cancer?</p>
+            <div class="options">
+                <input type="checkbox" id="q2-option1" data-correct="true"> <label for="q2-option1">Exposure to carcinogens</label><br>
+                <input type="checkbox" id="q2-option2"> <label for="q2-option2">Genetic factors</label><br>
+                <input type="checkbox" id="q2-option3"> <label for="q2-option3">Diet</label><br>
+            </div>
+            <div class="result"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>What are common symptoms of lung cancer?</p>
+            <div class="options">
+                <input type="checkbox" id="q3-option1" data-correct="true"> <label for="q3-option1">Coughing up blood</label><br>
+                <input type="checkbox" id="q3-option2"> <label for="q3-option2">Chest pain</label><br>
+                <input type="checkbox" id="q3-option3"> <label for="q3-option3">Unexplained weight loss</label><br>
+                <input type="checkbox" id="q3-option4"> <label for="q3-option4">Shortness of breath</label><br>
+            </div>
+            <div class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                checkAnswer(checkbox);
+            });
+        });
+
+        function checkAnswer(checkbox) {
+            const questionDiv = checkbox.closest('.question');
+            const resultElement = questionDiv.querySelector('.result');
+
+            if (checkbox.dataset.correct === "true" && checkbox.checked) {
+                resultElement.textContent = "Correct";
+            } else if (checkbox.dataset.correct === "true") {
+                resultElement.textContent = "";
+            } else if (checkbox.checked) {
+                resultElement.textContent = "Incorrect";
+            } else {
+                resultElement.textContent = "";
+            }
+        }
+    </script>
+</body>
