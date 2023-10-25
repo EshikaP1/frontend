@@ -68,7 +68,7 @@ Here are other links to learn more about lung cancer!
 <body>
     <h1>Lung Cancer Quiz</h1>
 
-    <div id="questions">
+<div id="questions">
         <!-- Question 1 -->
         <div class="question">
             <p>Which is the most common type of lung cancer?</p>
@@ -79,8 +79,8 @@ Here are other links to learn more about lung cancer!
             <div class="result"></div>
         </div>
 
-        <!-- Question 2 -->
-        <div class="question">
+<!-- Question 2 -->
+<div class="question">
             <p>What is the primary cause of lung cancer?</p>
             <div class="options">
                 <input type="checkbox" id="q2-option1" data-correct="true"> <label for="q2-option1">Exposure to carcinogens</label><br>
@@ -91,7 +91,7 @@ Here are other links to learn more about lung cancer!
         </div>
 
         <!-- Question 3 -->
-        <div class="question">
+ <div class="question">
             <p>What are common symptoms of lung cancer?</p>
             <div class="options">
                 <input type="checkbox" id="q3-option1" data-correct="true"> <label for="q3-option1">Coughing up blood</label><br>
@@ -103,7 +103,7 @@ Here are other links to learn more about lung cancer!
         </div>
     </div>
 
-    <script>
+<script>
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
