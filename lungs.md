@@ -3,11 +3,6 @@ layout: default
 title: Lung Cancer
 # course: compsci
 ---
----
-layout: default
-title: Lung Cancer
-# course: compsci
----
 
 ![Alt text](<images/Lung Cancer.png>)
 
