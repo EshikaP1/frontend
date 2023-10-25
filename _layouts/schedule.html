@@ -25,7 +25,7 @@ Load all posts with site
 {%endcomment%}
 
 {% for unit in units %}
-{% assign unitKey = "Page" | append: unit %}
+{% assign unitKey = "Unit" | append: unit %}
 {% assign unitData = course[unitKey] %}
 <h2>
   {{ unitKey }}: {{ unitData.title }}
@@ -41,7 +41,10 @@ Load all posts with site
 
 <table>
   <tr>
-    <th>Pages</th>
+    <th>Week</th>
+    <th>Plans</th>
+    <th>Hacks(Todo)</th>
+    <th>Tangibles</th>
   </tr>
 
   {%comment%} 
@@ -86,6 +89,12 @@ Load all posts with site
           {% if post.type == "plans" %} 
               {% assign plans = plans | unshift: title %}
               {% assign plans = plans | unshift: url %}
+          {% elsif post.type == "hacks" %}
+              {% assign hacks = hacks | unshift: title %}
+              {% assign hacks = hacks | unshift: url %} 
+          {% elsif post.type == "tangibles" %}
+              {% assign tangibles = tangibles | unshift: title %}
+              {% assign tangibles = tangibles | unshift: url %} 
           {% else %}
               {% assign uk = uk | unshift: title %}
               {% assign uk = uk | unshift: url %}     
