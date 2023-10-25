@@ -3,21 +3,28 @@ layout: default
 title: Lung Cancer
 # course: compsci
 ---
+---
+layout: default
+title: Lung Cancer
+# course: compsci
+---
+
+![Alt text](<images/Lung Cancer.png>)
 
 ## Introduction:
 Lung cancer is a serious and often life-threatening medical condition that affects the lungs. It is the leading cause of cancer-related deaths worldwide. This informational page aims to provide an overview of lung cancer, including its causes, types, symptoms, diagnosis, treatment options, and prevention strategies.
 
 ## Table of Contents
-What is Lung Cancer?
-Types of Lung Cancer
-Causes and Risk Factors
-Signs and Symptoms
-Diagnosis and Staging
-Treatment Options
-Living with Lung Cancer
-Prevention and Early Detection
-Support and Resources
-Conclusion
+- [What is Lung Cancer?](#what-is-lung-cancer)
+- [Types of Lung Cancer](#types-of-lung-cancer)
+- [Causes and Risk Factors](#causes-and-risk-factors)
+- [Signs and Symptoms](#signs-and-symptoms)
+- [Diagnosis and Staging](#diagnosis-and-staging)
+- [Treatment Options](#treatment-options)
+- [Living with Lung Cancer](#living-with-lung-cancer)
+- [Prevention and Early Detection](#prevention-and-early-detection)
+- [Support and Resources](#support-and-resources)
+- [Conclusion](#conclusion)
 
 ## What is Lung Cancer?
 Lung cancer occurs when abnormal cells in the lung grow uncontrollably, forming a tumor. These tumors can interfere with lung function, making it difficult for the affected person to breathe. Lung cancer can be broadly categorized into two main types: non-small cell lung cancer (NSCLC) and small cell lung cancer (SCLC).
@@ -56,5 +63,3 @@ Here are other links to learn more about lung cancer!
 - [Cancer Society](https://www.cancer.org/cancer/types/lung-cancer/about/what-is.html)
 - [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/lung-cancer/symptoms-causes/syc-20374620)
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer)
-
-
