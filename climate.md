@@ -54,6 +54,8 @@ Climate change is one of the most pressing global issues of our time. It refers 
 7. [Taking Action](#taking-action)
 8. [Climate Change Resources](#climate-change-resources)
 
+![Alt text](<images/download (1).jpeg>)
+
 ## What is Climate Change?
 Climate change refers to long-term alterations in the Earth's temperature and weather patterns. It encompasses both natural variations and those induced by human activities. The primary focus is on anthropogenic (human-caused) climate change.
 

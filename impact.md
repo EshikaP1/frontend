@@ -15,6 +15,8 @@ Climate change does not directly cause lung cancer. Instead, lung cancer primari
 4. [Heat Stress](#heat-stress)
 5. [Altered Allergen Distribution](#altered-allergen-distribution)
 
+
+
 ## Air Quality and Pollution
 
 Climate change can exacerbate air pollution, which may contain fine particulate matter (PM2.5), ozone, and other pollutants harmful to respiratory health. Prolonged exposure to polluted air can increase the risk of lung cancer.
