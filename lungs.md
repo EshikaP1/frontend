@@ -4,7 +4,7 @@ title: Lung Cancer
 # course: compsci
 ---
 
-## What is lung cancer? HELLOOOOOOOOOOOOOOOOOOOO
+## What is lung cancer? 
 - According to Mayo Clinic, lung cancer is a cancer that begins in the lungs. There are two major types of lung cancer which are non-small cell lung cancer and small cell lung cancer.
 - Lung cancer can be caused by many things and some of them are smoking, secondhand smoke, exposure to certain toxins, and family history.
 - The symptoms include cough (often with blood), chest pain, wheezing, and weight loss. These symptoms often don't appear until the cancer is advanced.
@@ -12,7 +12,7 @@ title: Lung Cancer
 - It is common and there are around 200,000 new cases each year in the US 
 
 ## Spot map of Mortality (death) rate of lung cancer around the world
-![Alt text](../_site/images/cancer-lung.jpg)
+![Alt text](images/cancer-lung.jpg)
 
 As you can see, lung cancer is more prevalent in some countries than in other. But...
 ## Why is that? 
@@ -22,3 +22,13 @@ As we read before, lung cancer can be caused by many factors, and one of them is
 
 ## CLIMATE CHANGE
 yes, that's right. Researchers in the American Lung Association have said that rising temperatures, wildfires and poor air quality all lead to an increase in the prevalence of lung cancer. But what can you do to solve this issue? Read our website to learn more!! 
+
+## More information
+Lung Cancer is a disease that affects so many people in the United States today. As we saw on the quiz, this disease is very prominent and takes the lives of many. Here are some links to learn more about the disease!
+   
+[CDC](https://www.cdc.gov/cancer/lung/basic_info/what-is-lung-cancer.htm)
+[Cancer Society](https://www.cancer.org/cancer/types/lung-cancer/about/what-is.html)
+[Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/lung-cancer/symptoms-causes/syc-20374620)
+[Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer)
+
+ 
