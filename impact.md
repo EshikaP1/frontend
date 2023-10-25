@@ -36,3 +36,47 @@ Extreme heat events associated with climate change can lead to heat-related illn
 Climate change can affect the distribution and prevalence of allergenic pollen-producing plants. For individuals with allergies or asthma, exposure to increased pollen can exacerbate respiratory issues. While allergies themselves are not a direct cause of lung cancer, ongoing respiratory inflammation from allergens can increase the risk of lung damage.
 
 Addressing climate change is important for protecting public health and reducing the risk of various respiratory ailments.
+
+## Link to backend
+%%HTML
+<head>
+    <title>State Input</title>
+</head>
+<body>
+    <h1>Enter a State Name</h1>
+    <form id="stateForm">
+        <input type="text" id="stateInput" placeholder="Enter a state name">
+        <button type="submit">Submit</button>
+    </form>
+
+ <div id="result">
+        <!-- The result from the backend will be displayed here -->
+    </div>
+
+<script>
+        // Listen for the form submission
+        document.getElementById('stateForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Get the state name from the input field
+            const stateName = document.getElementById('stateInput').value;
+
+            // Send the stateName to the backend using a fetch request
+            fetch('/backend_endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ state_name: stateName }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the result from the backend in the result div
+                document.getElementById('result').textContent = `Result from backend: ${data.result}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>

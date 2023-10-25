@@ -3,11 +3,6 @@ layout: default
 title: Climate
 ---
 
----
-layout: default
-title: Climate
----
-
 # Understanding Climate Change
 
 Climate change is one of the most pressing global issues of our time. It refers to significant and lasting changes in the Earth's climate patterns, primarily driven by human activities. This informational page aims to provide a comprehensive overview of climate change, including its causes, effects, consequences, and what we can do to address it.
