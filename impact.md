@@ -39,6 +39,7 @@ Addressing climate change is important for protecting public health and reducing
 
 ## Enter a state name and see how many cases they have! 
 
+%%HTML
 <head>
     <title>State Input</title>
 </head>
@@ -49,7 +50,7 @@ Addressing climate change is important for protecting public health and reducing
         <button type="submit">Submit</button>
     </form>
 
- <div id="result">
+<div id="result">
         <!-- The result from the backend will be displayed here -->
     </div>
 
@@ -62,7 +63,7 @@ Addressing climate change is important for protecting public health and reducing
             const stateName = document.getElementById('stateInput').value;
 
             // Send the stateName to the backend using a fetch request
-            fetch('/backend_endpoint', {
+            fetch('https://cancer0.stu.nighthawkcodingsociety.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
