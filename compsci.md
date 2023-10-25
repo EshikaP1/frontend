@@ -1,6 +1,6 @@
 ---
 layout: schedule
-title: Computer Science Time Box Page
+title: Lung Cancer and Climate Change
 units: "1,2"
 course: compsci
 ---
