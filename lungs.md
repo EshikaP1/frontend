@@ -42,6 +42,8 @@ Diagnosing lung cancer involves a combination of imaging tests, biopsies, and st
 ## Treatment Options
 Treatment options for lung cancer depend on the type, stage, and overall health of the patient. They may include surgery, radiation therapy, chemotherapy, targeted therapy, immunotherapy, and palliative care to manage symptoms and improve quality of life.
 
+![Alt text](<images/Types of lung cancer.png>)
+
 ## Living with Lung Cancer
 Living with lung cancer can be challenging, but it is possible to maintain a good quality of life with the right support, including emotional, psychological, and medical assistance.
 
@@ -53,6 +55,8 @@ Numerous organizations and support groups offer assistance to individuals and fa
 
 ## Conclusion
 Lung cancer is a serious and potentially life-threatening condition that requires prompt diagnosis and treatment. Understanding the risk factors, signs, and available treatment options can improve outcomes and the quality of life for those affected by this disease. Remember, early detection and prevention are crucial in the fight against lung cancer.
+
+![Alt text](images/4-stages-of-lung-cancer-Saint-Johns-Cancer-Institute.png)
 
 ## More information
 Here are other links to learn more about lung cancer! 
