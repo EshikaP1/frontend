@@ -28,6 +28,8 @@ Lung cancer occurs when abnormal cells in the lung grow uncontrollably, forming 
 - Non-Small Cell Lung Cancer (NSCLC): NSCLC is the most common type, accounting for around 85% of all lung cancer cases. It includes three subtypes: adenocarcinoma, squamous cell carcinoma, and large cell carcinoma.
 - Small Cell Lung Cancer (SCLC): SCLC is less common but tends to grow and spread more quickly than NSCLC.
 
+![Alt text](images/non-small-cell-lung-cancer-2249281_final-ea85b1b20eb748fb806d5ed11284dfd8.png)
+
 ## Causes and Risk Factors
 The primary cause of lung cancer is exposure to carcinogens, with tobacco smoke being the leading risk factor. Other risk factors include secondhand smoke, exposure to radon gas, workplace exposures (asbestos, arsenic, and more), and a family history of lung cancer.
 
