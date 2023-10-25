@@ -47,3 +47,41 @@ For further information and resources on climate change, consider exploring the 
 - [The Climate Reality Project](https://www.climaterealityproject.org/)
 
 Climate change is a complex and urgent global challenge that requires collective action. Understanding its causes, effects, and the steps we can take to address it is crucial for the well-being of current and future generations. By working together, we can mitigate the impacts of climate change and create a more sustainable and resilient world.
+
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+    }
+    button {
+      color: #b46060;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="climate-change-container">
+    <h1>What is climate change?</h1>
+    <p id="climate-info">Climate change is a global issue with serious consequences.</p>
+    <button id="change-info">Next</button>
+  </div>
+  <script>
+    const infoElement = document.getElementById("climate-info");
+    const changeButton = document.getElementById("change-info");
+
+    changeButton.addEventListener("click", function () {
+      if (infoElement.innerHTML === "Climate change is a global issue with serious consequences.") {
+        infoElement.innerHTML = "It's not only killing our planet but also the species in it. Around 1 million species are on the brink of extinction due to climate change.";
+      } else {
+        infoElement.innerHTML = "Climate change is a global issue with serious consequences.";
+      }
+    });
+  </script>
+</body>
+</html>
