@@ -39,47 +39,113 @@ Climate change can affect the distribution and prevalence of allergenic pollen-p
 
 Addressing climate change is important for protecting public health and reducing the risk of various respiratory ailments.
 
-## Enter a state name and see how many cases they have! 
 
-%%HTML
+<html>
 <head>
-    <title>State Input</title>
+    <title>Air Pollution Interactive</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .quiz-question {
+            margin: 20px 0;
+        }
+        .quiz-options input {
+            margin-right: 10px;
+        }
+        .quiz-result {
+            font-weight: bold;
+        }
+        #chart-container {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enter a State Name</h1>
-    <form id="stateForm">
-        <input type="text" id="stateInput" placeholder="Enter a state name">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1>About Air Pollution</h1>
+<p>Welcome to our interactive page about air pollution. Take our quiz and explore real-time air quality data below.</p>
 
-<div id="result">
-        <!-- The result from the backend will be displayed here -->
+ <div class="quiz-question">
+            <p>1. What is the main source of indoor air pollution in many households?</p>
+            <div class="quiz-options">
+                <input type="radio" name="q1" value="a"> Smoking<br>
+                <input type="radio" name="q1" value="b"> Outdoor air pollution<br>
+                <input type="radio" name="q1" value="c"> Houseplants<br>
+            </div>
+            <div class="quiz-result" id="q1-result"></div>
+        </div>
+
+ <div class="quiz-question">
+            <p>2. Which air pollutant is associated with the formation of acid rain?</p>
+            <div class="quiz-options">
+                <input type="radio" name="q2" value="a"> Carbon monoxide<br>
+                <input type="radio" name="q2" value="b"> Sulfur dioxide<br>
+                <input type="radio" name="q2" value="c"> Nitrogen oxide<br>
+            </div>
+            <div class="quiz-result" id="q2-result"></div>
+        </div>
+
+ <button onclick="submitQuiz()">Submit Quiz</button>
+
+ <div id="chart-container">
+            <h2>Real-time Air Quality</h2>
+            <canvas id="airQualityChart" width="400" height="200"></canvas>
+        </div>
     </div>
 
 <script>
-        // Listen for the form submission
-        document.getElementById('stateForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the default form submission
+        function submitQuiz() {
+            // Get the selected answers
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
 
-            // Get the state name from the input field
-            const stateName = document.getElementById('stateInput').value;
+            // Check answers and display results
+            if (q1Answer && q2Answer) {
+                if (q1Answer.value === "a") {
+                    document.getElementById("q1-result").textContent = "Correct";
+                } else {
+                    document.getElementById("q1-result").textContent = "Incorrect";
+                }
 
-            // Send the stateName to the backend using a fetch request
-            fetch('https://cancer0.stu.nighthawkcodingsociety.com/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ state_name: stateName }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Display the result from the backend in the result div
-                document.getElementById('result').textContent = `Result from backend: ${data.result}`;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+                if (q2Answer.value === "b") {
+                    document.getElementById("q2-result").textContent = "Correct";
+                } else {
+                    document.getElementById("q2-result").textContent = "Incorrect";
+                }
+            }
+        }
+
+        // Create a simple air quality chart
+        const ctx = document.getElementById('airQualityChart').getContext('2d');
+        const airQualityChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['PM2.5', 'PM10', 'NO2', 'SO2', 'CO'],
+                datasets: [{
+                    label: 'Air Quality Index',
+                    data: [25, 40, 20, 15, 10],
+                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
         });
     </script>
 </body>
+</html>
