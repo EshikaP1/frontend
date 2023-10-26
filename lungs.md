@@ -66,7 +66,13 @@ Here are other links to learn more about lung cancer!
 
 # <span style="color: #228B22"> Lung Cancer Quiz </span>
 
-<div id="questions">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <div id="questions">
         <!-- Question 1 -->
         <div class="question">
             <p>Which is the most common type of lung cancer?</p>
@@ -77,7 +83,7 @@ Here are other links to learn more about lung cancer!
             <div class="result"></div>
         </div>
 
-<!-- Question 2 -->
+        <!-- Question 2 -->
 <div class="question">
             <p>What is the primary cause of lung cancer?</p>
             <div class="options">
@@ -85,34 +91,27 @@ Here are other links to learn more about lung cancer!
                 <input type="radio" name="q2" id="q2-option2"> <label for="q2-option2">Genetic factors</label><br>
                 <input type="radio" name="q2" id="q2-option3"> <label for="q2-option3">Diet</label><br>
             </div>
-            <div class="result"></div>
+            <div class "result"></div>
         </div>
 
         <!-- Question 3 -->
- <div class="question">
+  <div class="question">
             <p>What are common symptoms of lung cancer?</p>
             <div class="options">
                 <input type="radio" name="q3" id="q3-option1"> <label for="q3-option1">Fever</label><br>
-                <input type="radio" name="q3" id="q3-option2" data-correct="true"> <label for="q3-option2">Coughing up blood</label><br>
+                <input type="radio" name "q3" id="q3-option2" data-correct="true"> <label for="q3-option2">Coughing up blood</label><br>
                 <input type="radio" name="q3" id="q3-option3"> <label for="q3-option3">Unexplained weight loss</label><br>
                 <input type="radio" name="q3" id="q3-option4"> <label for="q3-option4">Shortness of breath</label><br>
             </div>
             <div class="result"></div>
         </div>
+    </div>
 
-<<<<<<< HEAD
-    <script>
-        const radioButtons = document.querySelectorAll('input[type="radio"]');
-        radioButtons.forEach(radio => {
+  <script>
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
             radio.addEventListener('change', () => {
                 checkAnswer(radio);
-=======
-<script>
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                checkAnswer(checkbox);
->>>>>>> 042ecac254a7bcf7752385215413a0c20e4d54f4
             });
         });
 
@@ -121,7 +120,7 @@ Here are other links to learn more about lung cancer!
             const correctRadio = questionDiv.querySelector('input[data-correct="true"]');
             const resultElement = questionDiv.querySelector('.result');
 
-            if (radio.isEqualNode(correctRadio)) {
+            if (radio === correctRadio) {
                 resultElement.textContent = "Correct answer: " + correctRadio.nextElementSibling.textContent;
             } else {
                 resultElement.textContent = "Incorrect. Correct answer: " + correctRadio.nextElementSibling.textContent;
