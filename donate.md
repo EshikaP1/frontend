@@ -31,3 +31,56 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 ## Conclusion
 
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
+
+<html>
+<head>
+    <title>User Input Bar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <h1>User Input Bar Chart</h1>
+        <p>Enter values to create a bar chart:</p>
+        <input type="number" id="valueInput" placeholder="Enter a value">
+        <button onclick="addValue()">Add Value</button>
+        <canvas id="barChart" width="400" height="200"></canvas>
+    </div>
+
+ <script>
+        const values = [];
+        const chartData = {
+            labels: [],
+            datasets: [{
+                label: 'User Values',
+                data: values,
+                backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+            }]
+        };
+
+        const ctx = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        function addValue() {
+            const inputValue = document.getElementById('valueInput').value;
+            if (inputValue !== '') {
+                values.push(Number(inputValue));
+                chartData.labels.push(`Value ${values.length}`);
+                barChart.update();
+                document.getElementById('valueInput').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
