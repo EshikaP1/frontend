@@ -2,7 +2,7 @@
 layout: default
 title: Student Blog
 ---
-
+![Alt text](images/HOME.png)
 
 <p style="text-align: center; font-weight:800; font-size: 40px">Lung Cancer and Climate Change</p>
 <p style="text-align: center; font-weight:600; font-size: 20px; color:#00B07B">Did you know that lung cancer is caused my climate change? On this website we will tell you all about lung cancer and climate change and how they are linked to each other.</p>

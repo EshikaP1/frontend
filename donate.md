@@ -2,7 +2,7 @@
 layout: default
 title: How you can help
 ---
-![Alt text](<images/Lung Cancer (2).png>)
+![Alt text](images/DONATE.png)
 
 You can make a positive impact by supporting organizations working to address critical issues related to lung cancer and climate change. Your donations can help fund research, provide support to affected individuals, and drive initiatives to combat these challenges. Below, you'll find links to reputable organizations where you can make contributions:
 

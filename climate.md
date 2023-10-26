@@ -1,19 +1,12 @@
 ---
 layout: default
-title: Climate
+title: Climate Change
 ---
-![Alt text](<images/Lung Cancer (1).png>)
+![Alt text](<images/CLIMATE CHANGE.png>)
 
 <html>
 <head>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    p {
-      font-size: 18px;
-    }
     button {
       color: #b46060;
       padding: 10px 20px;
@@ -31,8 +24,8 @@ title: Climate
     const infoElement = document.getElementById("climate-info");
     const changeButton = document.getElementById("change-info");
 
-    changeButton.addEventListener("click", function () {
-      if (infoElement.innerHTML === "Climate change is a global issue with serious consequences.") {
+      changeButton.addEventListener("click", function () {
+     if (infoElement.innerHTML === "Climate change is a global issue with serious consequences.") {
         infoElement.innerHTML = "It's not only killing our planet but also the species in it. Around 1 million species are on the brink of extinction due to climate change.";
       } else {
         infoElement.innerHTML = "Climate change is a global issue with serious consequences.";
@@ -45,14 +38,14 @@ title: Climate
 Climate change is one of the most pressing global issues of our time. It refers to significant and lasting changes in the Earth's climate patterns, primarily driven by human activities. This informational page aims to provide a comprehensive overview of climate change, including its causes, effects, consequences, and what we can do to address it.
 
 ## Table of Contents
-1. [What is Climate Change?](#what-is-climate-change)
-2. [Causes of Climate Change](#causes-of-climate-change)
-3. [Effects of Climate Change](#effects-of-climate-change)
-4. [Consequences of Climate Change](#consequences-of-climate-change)
-5. [Mitigation and Adaptation](#mitigation-and-adaptation)
-6. [International Agreements](#international-agreements)
-7. [Taking Action](#taking-action)
-8. [Climate Change Resources](#climate-change-resources)
+[What is Climate Change?](#what-is-climate-change)
+[Causes of Climate Change](#causes-of-climate-change)
+[Effects of Climate Change](#effects-of-climate-change)
+[Consequences of Climate Change](#consequences-of-climate-change)
+[Mitigation and Adaptation](#mitigation-and-adaptation)
+[International Agreements](#international-agreements)
+[Taking Action](#taking-action)
+[Climate Change Resources](#climate-change-resources)
 
 ![Alt text](<images/download (1).jpeg>)
 

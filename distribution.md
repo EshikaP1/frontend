@@ -2,11 +2,10 @@
 layout: default
 title: Distrubution 
 ---
-IMAGE HERE 
+![Alt text](images/DISTRIBUTION.png)
 
 # Lung Cancer by State 
 Here is an interactive where you type in a state name and you get the number of lung cancer cases it has! 
-
 
 <head>
     <title>State Input</title>
@@ -49,6 +48,7 @@ Here is an interactive where you type in a state name and you get the number of 
         });
     </script>
 </body>
+
 
 The distribution of lung cancer cases can be grouped my space. Some areas are more disporportionally affected by lung cancer cases than others. Some areas specially, such as low income or areas next to factories, have a sharp increase in lung cancer cases. 
 
