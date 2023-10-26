@@ -43,120 +43,70 @@ Your contributions can make a real difference in the fight against lung cancer a
     <form id="quizForm">
         <p>
             <label for="smoke">1. Do you smoke inside your house?</label>
-            <input type="radio" name="smoke" value="0">No
             <input type="radio" name="smoke" value="1">Yes
+            <input type="radio" name="smoke" value="0">No
         </p>
         <p>
             <label for="chemicals">2. Do you use harsh chemicals to clean your house?</label>
-            <input type="radio" name="chemicals" value="0">No
             <input type="radio" name="chemicals" value="1">Yes
+            <input type="radio" name="chemicals" value="0">No
         </p>
         <p>
             <label for="ventilation">3. Does your house have bad ventilation?</label>
-            <input type="radio" name="ventilation" value="0">No
             <input type="radio" name="ventilation" value="1">Yes
+            <input type="radio" name="ventilation" value="0">No
         </p>
         <p>
             <label for="carpeting">4. Do you have carpeting in your house?</label>
-            <input type="radio" name="carpeting" value="0">No
             <input type="radio" name="carpeting" value="1">Yes
+            <input type="radio" name="carpeting" value="0">No
         </p>
         <p>
-            <label for "trash">5. Do you keep your trash covered?</label>
-            <input type="radio" name="trash" value="0">No
+            <label for="trash">5. Do you keep your trash covered?</label>
             <input type="radio" name="trash" value="1">Yes
+            <input type="radio" name="trash" value="0">No
         </p>
         <p>
             <label for="vacuum">6. Do you vacuum your house frequently?</label>
-            <input type="radio" name="vacuum" value="0">No
             <input type="radio" name="vacuum" value="1">Yes
+            <input type="radio" name="vacuum" value="0">No
         </p>
         <p>
             <label for="candles">7. Do you keep a lid on scented candles?</label>
-            <input type="radio" name="candles" value="0">No
             <input type="radio" name="candles" value="1">Yes
+            <input type="radio" name="candles" value="0">No
         </p>
         <input type="button" value="Submit" id="submitBtn">
     </form>
     <p>Your Score: <span id="score">0</span></p>
-
-<h2>Indoor Air Quality Chart</h2>
-    <div>
-        <label for="userName">Name:</label>
-        <input type="text" id="userName">
-        <label for="quizScore">Quiz Score:</label>
-        <input type="number" id="quizScore" min="0">
-        <button id="addData">Add Data</button>
-    </div>
-    <canvas id="chart"></canvas>
-
- <script>
-        let score = 0;
-        const answers = document.forms["quizForm"].elements;
-
-        function calculateScore() {
-            for (let i = 0; i < answers.length; i++) {
-                if (answers[i].type === "radio" && answers[i].checked) {
-                    score += 1 - parseInt(answers[i].value);
-                }
-            }
-            document.getElementById("score").textContent = score;
-        }
-
-        document.getElementById("submitBtn").addEventListener("click", calculateScore);
-
-        const userNames = [];
-        const quizScores = [];
-        const ctx = document.getElementById("chart").getContext("2d");
-        let chart;
-
-        document.getElementById("addData").addEventListener("click", () => {
-            const userName = document.getElementById("userName").value;
-            const quizScore = parseInt(document.getElementById("quizScore").value);
-            userNames.push(userName);
-            quizScores.push(quizScore);
-
-            if (chart) {
-                chart.destroy();
-            }
-
-            chart = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: userNames,
-                    datasets: [{
-                        label: "Quiz Score",
-                        data: quizScores,
-                        backgroundColor: "rgba(75, 192, 192, 0.2)",
-                        borderColor: "rgba(75, 192, 192, 1)",
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 7 // Max quiz score
-                        }
-                    }
-                }
-            });
-
-            document.getElementById("userName").value = "";
-            document.getElementById("quizScore").value = "";
-        });
-    </script>
 </body>
 </html>
 
+<script>
+    let score = 0;
+    const answers = document.forms["quizForm"].elements;
+
+    function calculateScore() {
+        for (let i = 0; i < answers.length; i++) {
+            if (answers[i].type === "radio" && answers[i].checked) {
+                score += parseInt(answers[i].value);
+            }
+        }
+        document.getElementById("score").textContent = 7 - score; // Calculate the score as 7 minus the total points
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", calculateScore);
+</script>
+
+Now compare your scores with your friends! Input your quiz score here and see how it compares with others. The higher the score the less you contribute to air pollution!! 
 
 <html>
 <head>
-    <title>Indoor Air Quality Chart</title>
+    <title>Indoor Air Quality Scores</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Indoor Air Quality Chart</h1>
+    <h1>Indoor Air Quality Scores</h1>
     <div>
         <label for="userName">Name:</label>
         <input type="text" id="userName">
