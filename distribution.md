@@ -4,7 +4,7 @@ title: Distrubution
 ---
 ![Alt text](images/DISTRIBUTION.png)
 
-# Lung Cancer by State 
+# <span style="color: #228B22"> Lung Cancer by State </span>
 Here is an interactive where you type in a state name and you get the number of lung cancer cases it has! 
 
 <head>
@@ -52,16 +52,16 @@ Here is an interactive where you type in a state name and you get the number of 
 
 The distribution of lung cancer cases can be grouped my space. Some areas are more disporportionally affected by lung cancer cases than others. Some areas specially, such as low income or areas next to factories, have a sharp increase in lung cancer cases. 
 
-## Distribution Maps 
+## <span style="color: #228B22"> Distribution Maps </span>
 
-## San Diego County Lung Cancer Cases 
+## <span style="color: #228B22"> San Diego County Lung Cancer Cases </span>
 ![Alt text](<images/download (2).jpeg>)
 
-## California Lung Cancer Cases 
+## <span style="color: #228B22"> California Lung Cancer Cases </span> 
 ![Alt text](<images/Screenshot 2020-07-20 08.57.36.png>)
 
-## United States Lung Cancer Cases
+## <span style="color: #228B22"> United States Lung Cancer Cases </span>
 ![Alt text](images/mm6936a8-F.gif)
 
-## World Lung Cancer Cases 
+## <span style="color: #228B22"> World Lung Cancer Cases </span> 
 ![Alt text](images/Ch11_Lung_Rates_M-mobile.png)

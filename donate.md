@@ -6,7 +6,7 @@ title: How you can help
 
 You can make a positive impact by supporting organizations working to address critical issues related to lung cancer and climate change. Your donations can help fund research, provide support to affected individuals, and drive initiatives to combat these challenges. Below, you'll find links to reputable organizations where you can make contributions:
 
-## Lung Cancer
+## <span style="color: #228B22"> Lung Cancer </span>
 
 ### [Lung Cancer Foundation of America](https://lcfamerica.org/donate/)
 The Lung Cancer Foundation of America (LCFA) is dedicated to funding innovative and promising research in the fight against lung cancer. Your donations support groundbreaking advancements in prevention, early detection, treatment, and ultimately, finding a cure.
@@ -17,7 +17,7 @@ The American Lung Association works tirelessly to improve lung health and preven
 ### [Cancer Research Institute](https://www.cancerresearch.org/join-the-cause/donate)
 The Cancer Research Institute (CRI) funds cancer immunotherapy research, including research into lung cancer treatments. Your support helps advance innovative approaches to fighting cancer.
 
-## Climate Change
+## <span style="color: #228B22"> Climate Change </span>
 
 ### [Environmental Defense Fund](https://www.edf.org/give)
 The Environmental Defense Fund (EDF) focuses on finding solutions to combat climate change and protect the environment. Your donations support their work in advocating for policies, clean energy solutions, and sustainable practices.
@@ -28,7 +28,7 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 ### [350.org](https://350.org/donate/)
 350.org is a grassroots organization that mobilizes for climate action and divestment from fossil fuels. Your donations support their efforts in building a sustainable future.
 
-## Conclusion
+## <span style="color: #228B22"> Conclusion </span>
 
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
 

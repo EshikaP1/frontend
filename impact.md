@@ -7,7 +7,7 @@ title: Your Impact
 
 Climate change does not directly cause lung cancer. Instead, lung cancer primarily results from exposure to carcinogens, with tobacco smoke being the leading risk factor. However, climate change can indirectly influence lung cancer risk through several mechanisms:
 
-# Table of Contents
+# <span style="color: #228B22"> Table of Contents </span>
 
 1. [Air Quality and Pollution](#air-quality-and-pollution)
 2. [Wildfires](#wildfires)
@@ -17,23 +17,23 @@ Climate change does not directly cause lung cancer. Instead, lung cancer primari
 
 
 
-## Air Quality and Pollution
+## <span style="color: #228B22"> Air Quality and Pollution </span>
 
 Climate change can exacerbate air pollution, which may contain fine particulate matter (PM2.5), ozone, and other pollutants harmful to respiratory health. Prolonged exposure to polluted air can increase the risk of lung cancer.
 
-## Wildfires
+## <span style="color: #228B22"> Wildfires </span>
 
 Rising global temperatures and altered precipitation patterns can contribute to an increase in the frequency and intensity of wildfires. Wildfires release a range of harmful air pollutants, including particulate matter and volatile organic compounds. Prolonged exposure to wildfire smoke can harm lung health and potentially increase lung cancer risk.
 
-## Vector-Borne Diseases
+## <span style="color: #228B22"> Vector-Borne Diseases </span>
 
 Climate change can expand the geographical range of certain disease vectors like mosquitoes. This can lead to an increased risk of vector-borne diseases such as malaria or Zika, which can impact lung health when these diseases affect the respiratory system.
 
-## Heat Stress
+## <span style="color: #228B22"> Heat Stress </span>
 
 Extreme heat events associated with climate change can lead to heat-related illnesses, potentially increasing the risk of respiratory infections that may, in some cases, contribute to lung cancer risk.
 
-## Altered Allergen Distribution
+## <span style="color: #228B22"> Altered Allergen Distribution </span>
 
 Climate change can affect the distribution and prevalence of allergenic pollen-producing plants. For individuals with allergies or asthma, exposure to increased pollen can exacerbate respiratory issues. While allergies themselves are not a direct cause of lung cancer, ongoing respiratory inflammation from allergens can increase the risk of lung damage.
 

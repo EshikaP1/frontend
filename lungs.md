@@ -5,10 +5,10 @@ title: Lung Cancer
 ---
 ![Alt text](<images/LUNG CANCER (4).png>)
 
-## <span style="color: #228B22">Introduction:.</span>
+## <span style="color: #228B22">Introduction:</span>
 Lung cancer is a serious and often life-threatening medical condition that affects the lungs. It is the leading cause of cancer-related deaths worldwide. This informational page aims to provide an overview of lung cancer, including its causes, types, symptoms, diagnosis, treatment options, and prevention strategies.
 
-## <span style="color: #228B22">Table of Contents.</span>
+## <span style="color: #228B22">Table of Contents</span>
 - [What is Lung Cancer?](#what-is-lung-cancer)
 - [Types of Lung Cancer](#types-of-lung-cancer)
 - [Causes and Risk Factors](#causes-and-risk-factors)
@@ -99,7 +99,6 @@ Here are other links to learn more about lung cancer!
             </div>
             <div class="result"></div>
         </div>
-    </div>
 
 <script>
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
