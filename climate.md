@@ -39,14 +39,14 @@ title: Climate Change
 Climate change is one of the most pressing global issues of our time. It refers to significant and lasting changes in the Earth's climate patterns, primarily driven by human activities. This informational page aims to provide a comprehensive overview of climate change, including its causes, effects, consequences, and what we can do to address it.
 
 ## <span style="color: #228B22"> Table of Contents
-[What is Climate Change?](#what-is-climate-change)
-[Causes of Climate Change](#causes-of-climate-change)
-[Effects of Climate Change](#effects-of-climate-change)
-[Consequences of Climate Change](#consequences-of-climate-change)
-[Mitigation and Adaptation](#mitigation-and-adaptation)
-[International Agreements](#international-agreements)
-[Taking Action](#taking-action)
-[Climate Change Resources](#climate-change-resources)
+- [What is Climate Change?](#what-is-climate-change)
+- [Causes of Climate Change](#causes-of-climate-change)
+- [Effects of Climate Change](#effects-of-climate-change)
+- [Consequences of Climate Change](#consequences-of-climate-change)
+- [Mitigation and Adaptation](#mitigation-and-adaptation)
+- [International Agreements](#international-agreements)
+- [Taking Action](#taking-action)
+- [Climate Change Resources](#climate-change-resources)
 
 ![Alt text](<images/download (1).jpeg>)
 

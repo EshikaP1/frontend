@@ -2,8 +2,7 @@
 layout: default
 title: Your Impact
 ---
-
-![Alt text](<images/Lung Cancer (3).png>)
+![Alt text](images/IMPACT.png)
 
 Climate change does not directly cause lung cancer. Instead, lung cancer primarily results from exposure to carcinogens, with tobacco smoke being the leading risk factor. However, climate change can indirectly influence lung cancer risk through several mechanisms:
 
@@ -42,7 +41,7 @@ Addressing climate change is important for protecting public health and reducing
 
 <html>
 <head>
-    <title>Air Pollution Interactive</title>
+    <title>Air Pollution Quiz!!</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* Add your CSS styles here */
@@ -70,8 +69,8 @@ Addressing climate change is important for protecting public health and reducing
 </head>
 <body>
     <div class="container">
-        <h1>About Air Pollution</h1>
-<p>Welcome to our interactive page about air pollution. Take our quiz and explore real-time air quality data below.</p>
+        <h1>Air Pollution Quiz!!</h1>
+<p>Quiz time! Answer the questions below to the best of your ability. If you get it wrong, you can press other options to see the right.</p>
 
  <div class="quiz-question">
             <p>1. What is the main source of indoor air pollution in many households?</p>
