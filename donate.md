@@ -32,7 +32,7 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
 
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Indoor Air Quality</title>
@@ -93,10 +93,12 @@ Your contributions can make a real difference in the fight against lung cancer a
             }
         }
         document.getElementById("score").textContent = 7 - score; // Calculate the score as 7 minus the total points
+        score = 0; // Reset the score to 0
     }
 
     document.getElementById("submitBtn").addEventListener("click", calculateScore);
 </script>
+
 
 Now compare your scores with your friends! Input your quiz score here and see how it compares with others. The higher the score the less you contribute to air pollution!! 
 
