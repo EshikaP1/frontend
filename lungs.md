@@ -64,17 +64,7 @@ Here are other links to learn more about lung cancer!
 - [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/lung-cancer/symptoms-causes/syc-20374620)
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer)
 
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lung Cancer Quiz</title>
-</head>
-<body>
-    <h1>Lung Cancer Quiz</h1>
-=======
 # <span style="color: #228B22"> Lung Cancer Quiz </span>
->>>>>>> 042ecac254a7bcf7752385215413a0c20e4d54f4
 
 <div id="questions">
         <!-- Question 1 -->
