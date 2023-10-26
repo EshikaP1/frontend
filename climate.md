@@ -18,7 +18,6 @@ title: Climate Change
 </head>
 <body>
   <div id="climate-change-container">
-    <h1>What is climate change?</h1>
     <p id="climate-info">Climate change is a global issue with serious consequences.</p>
     <button id="change-info">Next</button>
   </div>
