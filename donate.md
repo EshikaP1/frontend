@@ -32,10 +32,11 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
 
-<!DOCTYPE html>
+
 <html>
 <head>
-    <title>What is your indoor air quality score?</title>
+    <title>Indoor Air Quality</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>What is your indoor air quality score?</h1>
@@ -61,7 +62,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             <input type="radio" name="carpeting" value="1">Yes
         </p>
         <p>
-            <label for="trash">5. Do you keep your trash covered?</label>
+            <label for "trash">5. Do you keep your trash covered?</label>
             <input type="radio" name="trash" value="0">No
             <input type="radio" name="trash" value="1">Yes
         </p>
@@ -71,7 +72,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             <input type="radio" name="vacuum" value="1">Yes
         </p>
         <p>
-            <label for="candles">7. Do you keep a lit on scented candles?</label>
+            <label for="candles">7. Do you keep a lid on scented candles?</label>
             <input type="radio" name="candles" value="0">No
             <input type="radio" name="candles" value="1">Yes
         </p>
@@ -79,25 +80,76 @@ Your contributions can make a real difference in the fight against lung cancer a
     </form>
     <p>Your Score: <span id="score">0</span></p>
 
+<h2>Indoor Air Quality Chart</h2>
+    <div>
+        <label for="userName">Name:</label>
+        <input type="text" id="userName">
+        <label for="quizScore">Quiz Score:</label>
+        <input type="number" id="quizScore" min="0">
+        <button id="addData">Add Data</button>
+    </div>
+    <canvas id="chart"></canvas>
+
  <script>
-        document.getElementById("submitBtn").addEventListener("click", calculateScore);
+        let score = 0;
+        const answers = document.forms["quizForm"].elements;
 
         function calculateScore() {
-            let score = 0;
-            const answers = document.forms["quizForm"].elements;
             for (let i = 0; i < answers.length; i++) {
                 if (answers[i].type === "radio" && answers[i].checked) {
-                    score += parseInt(answers[i].value);
+                    score += 1 - parseInt(answers[i].value);
                 }
             }
-            document.getElementById("score").textContent = answers.length - score;
+            document.getElementById("score").textContent = score;
         }
+
+        document.getElementById("submitBtn").addEventListener("click", calculateScore);
+
+        const userNames = [];
+        const quizScores = [];
+        const ctx = document.getElementById("chart").getContext("2d");
+        let chart;
+
+        document.getElementById("addData").addEventListener("click", () => {
+            const userName = document.getElementById("userName").value;
+            const quizScore = parseInt(document.getElementById("quizScore").value);
+            userNames.push(userName);
+            quizScores.push(quizScore);
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: userNames,
+                    datasets: [{
+                        label: "Quiz Score",
+                        data: quizScores,
+                        backgroundColor: "rgba(75, 192, 192, 0.2)",
+                        borderColor: "rgba(75, 192, 192, 1)",
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 7 // Max quiz score
+                        }
+                    }
+                }
+            });
+
+            document.getElementById("userName").value = "";
+            document.getElementById("quizScore").value = "";
+        });
     </script>
 </body>
 </html>
 
 
-<!DOCTYPE html>
 <html>
 <head>
     <title>Indoor Air Quality Chart</title>
