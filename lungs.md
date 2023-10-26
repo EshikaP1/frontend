@@ -66,7 +66,6 @@ Here are other links to learn more about lung cancer!
 
 # <span style="color: #228B22"> Lung Cancer Quiz </span>
 
-<!DOCTYPE html>
 <html>
 <head>
     <title>Quiz</title>
@@ -91,7 +90,7 @@ Here are other links to learn more about lung cancer!
                 <input type="radio" name="q2" id="q2-option2"> <label for="q2-option2">Genetic factors</label><br>
                 <input type="radio" name="q2" id="q2-option3"> <label for="q2-option3">Diet</label><br>
             </div>
-            <div class "result"></div>
+            <div class> "result"</div>
         </div>
 
         <!-- Question 3 -->
@@ -99,12 +98,11 @@ Here are other links to learn more about lung cancer!
             <p>What are common symptoms of lung cancer?</p>
             <div class="options">
                 <input type="radio" name="q3" id="q3-option1"> <label for="q3-option1">Fever</label><br>
-                <input type="radio" name "q3" id="q3-option2" data-correct="true"> <label for="q3-option2">Coughing up blood</label><br>
+                <input type="radio" name="q3" id="q3-option2" data-correct="true"> <label for="q3-option2">Coughing up blood</label><br>
                 <input type="radio" name="q3" id="q3-option3"> <label for="q3-option3">Unexplained weight loss</label><br>
                 <input type="radio" name="q3" id="q3-option4"> <label for="q3-option4">Shortness of breath</label><br>
             </div>
             <div class="result"></div>
-        </div>
     </div>
 
   <script>
