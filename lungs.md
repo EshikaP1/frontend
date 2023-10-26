@@ -64,7 +64,6 @@ Here are other links to learn more about lung cancer!
 - [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/lung-cancer/symptoms-causes/syc-20374620)
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer)
 
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,11 +71,8 @@ Here are other links to learn more about lung cancer!
 </head>
 <body>
     <h1>Lung Cancer Quiz</h1>
-=======
-# <span style="color: #228B22"> Lung Cancer Quiz </span>
->>>>>>> 042ecac254a7bcf7752385215413a0c20e4d54f4
 
-<div id="questions">
+    <div id="questions">
         <!-- Question 1 -->
         <div class="question">
             <p>Which is the most common type of lung cancer?</p>
@@ -87,8 +83,8 @@ Here are other links to learn more about lung cancer!
             <div class="result"></div>
         </div>
 
-<!-- Question 2 -->
-<div class="question">
+        <!-- Question 2 -->
+        <div class="question">
             <p>What is the primary cause of lung cancer?</p>
             <div class="options">
                 <input type="radio" name="q2" id="q2-option1" data-correct="true"> <label for="q2-option1">Exposure to carcinogens</label><br>
@@ -99,7 +95,7 @@ Here are other links to learn more about lung cancer!
         </div>
 
         <!-- Question 3 -->
- <div class="question">
+        <div class="question">
             <p>What are common symptoms of lung cancer?</p>
             <div class="options">
                 <input type="radio" name="q3" id="q3-option1"> <label for="q3-option1">Fever</label><br>
@@ -109,20 +105,13 @@ Here are other links to learn more about lung cancer!
             </div>
             <div class="result"></div>
         </div>
+    </div>
 
-<<<<<<< HEAD
     <script>
         const radioButtons = document.querySelectorAll('input[type="radio"]');
         radioButtons.forEach(radio => {
             radio.addEventListener('change', () => {
                 checkAnswer(radio);
-=======
-<script>
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                checkAnswer(checkbox);
->>>>>>> 042ecac254a7bcf7752385215413a0c20e4d54f4
             });
         });
 
@@ -140,3 +129,4 @@ Here are other links to learn more about lung cancer!
     </script>
 </body>
 </html>
+
