@@ -6,6 +6,8 @@ title: Climate Change
 
 # <span style="color: #228B22"> What is Climate Change? </span>
 
+<!-- This is the page header with the title "What is Climate Change?" -->
+
 <html>
 <head>
   <style>
@@ -25,8 +27,9 @@ title: Climate Change
     const infoElement = document.getElementById("climate-info");
     const changeButton = document.getElementById("change-info");
 
-      changeButton.addEventListener("click", function () {
-     if (infoElement.innerHTML === "Climate change is a global issue with serious consequences.") {
+    // JavaScript code for changing climate change information on button click
+    changeButton.addEventListener("click", function () {
+      if (infoElement.innerHTML === "Climate change is a global issue with serious consequences.") {
         infoElement.innerHTML = "It's not only killing our planet but also the species in it. Around 1 million species are on the brink of extinction due to climate change.";
       } else {
         infoElement.innerHTML = "Climate change is a global issue with serious consequences.";
@@ -36,7 +39,11 @@ title: Climate Change
 </body>
 </html>
 
+<!-- This section is an HTML block with JavaScript code for displaying and updating climate change information. -->
+
 Climate change is one of the most pressing global issues of our time. It refers to significant and lasting changes in the Earth's climate patterns, primarily driven by human activities. This informational page aims to provide a comprehensive overview of climate change, including its causes, effects, consequences, and what we can do to address it.
+
+<!-- Introduction to climate change -->
 
 ## <span style="color: #228B22"> Table of Contents
 - [What is Climate Change?](#what-is-climate-change)
@@ -48,25 +55,41 @@ Climate change is one of the most pressing global issues of our time. It refers 
 - [Taking Action](#taking-action)
 - [Climate Change Resources](#climate-change-resources)
 
+<!-- Table of contents with links to various sections -->
+
 ![Alt text](<images/download (1).jpeg>)
+
+<!-- Image related to climate change -->
 
 ## <span style="color: #228B22"> Causes of Climate Change </span>
 Human activities, particularly the burning of fossil fuels like coal, oil, and natural gas, as well as deforestation and industrial processes, have significantly increased the concentration of greenhouse gases in the atmosphere. These gases, including carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O), trap heat and lead to a warming effect.
 
+<!-- Information about the causes of climate change -->
+
 ## <span style="color: #228B22"> Effects of Climate Change </span>
 The effects of climate change are widespread and include rising global temperatures, more frequent and severe weather events (e.g., hurricanes, droughts, and wildfires), melting ice caps and glaciers, and disruptions in ecosystems and biodiversity.
+
+<!-- Information about the effects of climate change -->
 
 ## <span style="color: #228B22"> Consequences of Climate Change </span>
 Climate change has far-reaching consequences, affecting agriculture, water resources, health, and food security. It also poses challenges for vulnerable communities, as sea levels rise and weather patterns become less predictable.
 
+<!-- Information about the consequences of climate change -->
+
 ## <span style="color: #228B22"> Mitigation and Adaptation </span>
 Mitigation efforts focus on reducing greenhouse gas emissions by transitioning to clean energy sources, improving energy efficiency, and sustainable land use. Adaptation strategies involve preparing for the impacts of climate change by building resilient infrastructure and systems.
+
+<!-- Information about mitigation and adaptation strategies -->
 
 ## <span style="color: #228B22"> International Agreements </span>
 International agreements like the Paris Agreement aim to unite countries in a common effort to combat climate change. These agreements set targets for reducing greenhouse gas emissions and promote global cooperation.
 
+<!-- Information about international agreements related to climate change -->
+
 ## <span style="color: #228B22"> Taking Action </span>
 Individuals can take action by reducing energy consumption, adopting sustainable practices, supporting clean energy initiatives, and advocating for policies that address climate change. Community engagement and education are also crucial.
+
+<!-- Information about individual and community actions to address climate change -->
 
 ## <span style="color: #228B22"> Climate Change Resources </span>
 For further information and resources on climate change, consider exploring the following sources:
@@ -75,5 +98,7 @@ For further information and resources on climate change, consider exploring the 
 - [National Aeronautics and Space Administration (NASA) - Climate](https://climate.nasa.gov/)
 - [United Nations Framework Convention on Climate Change (UNFCCC)](https://unfccc.int/)
 - [The Climate Reality Project](https://www.climaterealityproject.org/)
+
+<!-- List of resources and links related to climate change -->
 
 Climate change is a complex and urgent global challenge that requires collective action. Understanding its causes, effects, and the steps we can take to address it is crucial for the well-being of current and future generations. By working together, we can mitigate the impacts of climate change and create a more sustainable and resilient world.
