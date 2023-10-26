@@ -61,17 +61,17 @@ Your contributions can make a real difference in the fight against lung cancer a
             <input type="radio" name="carpeting" value="0">No
         </p>
         <p>
-            <label for="trash">5. Do you keep your trash covered?</label>
+            <label for="trash">5. Do you not keep your trash covered?</label>
             <input type="radio" name="trash" value="1">Yes
             <input type="radio" name="trash" value="0">No
         </p>
         <p>
-            <label for="vacuum">6. Do you vacuum your house frequently?</label>
+            <label for="vacuum">6. Do you not vacuum your house frequently?</label>
             <input type="radio" name="vacuum" value="1">Yes
             <input type="radio" name="vacuum" value="0">No
         </p>
         <p>
-            <label for="candles">7. Do you keep a lid on scented candles?</label>
+            <label for="candles">7. Do you not keep a lid on scented candles?</label>
             <input type="radio" name="candles" value="1">Yes
             <input type="radio" name="candles" value="0">No
         </p>
