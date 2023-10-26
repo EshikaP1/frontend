@@ -32,55 +32,128 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
 
+<!DOCTYPE html>
 <html>
 <head>
-    <title>User Input Bar Chart</title>
+    <title>What is your indoor air quality score?</title>
+</head>
+<body>
+    <h1>What is your indoor air quality score?</h1>
+    <form id="quizForm">
+        <p>
+            <label for="smoke">1. Do you smoke inside your house?</label>
+            <input type="radio" name="smoke" value="0">No
+            <input type="radio" name="smoke" value="1">Yes
+        </p>
+        <p>
+            <label for="chemicals">2. Do you use harsh chemicals to clean your house?</label>
+            <input type="radio" name="chemicals" value="0">No
+            <input type="radio" name="chemicals" value="1">Yes
+        </p>
+        <p>
+            <label for="ventilation">3. Does your house have bad ventilation?</label>
+            <input type="radio" name="ventilation" value="0">No
+            <input type="radio" name="ventilation" value="1">Yes
+        </p>
+        <p>
+            <label for="carpeting">4. Do you have carpeting in your house?</label>
+            <input type="radio" name="carpeting" value="0">No
+            <input type="radio" name="carpeting" value="1">Yes
+        </p>
+        <p>
+            <label for="trash">5. Do you keep your trash covered?</label>
+            <input type="radio" name="trash" value="0">No
+            <input type="radio" name="trash" value="1">Yes
+        </p>
+        <p>
+            <label for="vacuum">6. Do you vacuum your house frequently?</label>
+            <input type="radio" name="vacuum" value="0">No
+            <input type="radio" name="vacuum" value="1">Yes
+        </p>
+        <p>
+            <label for="candles">7. Do you keep a lit on scented candles?</label>
+            <input type="radio" name="candles" value="0">No
+            <input type="radio" name="candles" value="1">Yes
+        </p>
+        <input type="button" value="Submit" id="submitBtn">
+    </form>
+    <p>Your Score: <span id="score">0</span></p>
+
+ <script>
+        document.getElementById("submitBtn").addEventListener("click", calculateScore);
+
+        function calculateScore() {
+            let score = 0;
+            const answers = document.forms["quizForm"].elements;
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].type === "radio" && answers[i].checked) {
+                    score += parseInt(answers[i].value);
+                }
+            }
+            document.getElementById("score").textContent = answers.length - score;
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indoor Air Quality Chart</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <h1>Indoor Air Quality Chart</h1>
     <div>
-        <h1>User Input Bar Chart</h1>
-        <p>Enter values to create a bar chart:</p>
-        <input type="number" id="valueInput" placeholder="Enter a value">
-        <button onclick="addValue()">Add Value</button>
-        <canvas id="barChart" width="400" height="200"></canvas>
+        <label for="userName">Name:</label>
+        <input type="text" id="userName">
+        <label for="quizScore">Quiz Score:</label>
+        <input type="number" id="quizScore" min="0">
+        <button id="addData">Add Data</button>
     </div>
+    <canvas id="chart"></canvas>
 
- <script>
-        const values = [];
-        const chartData = {
-            labels: [],
-            datasets: [{
-                label: 'User Values',
-                data: values,
-                backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1,
-            }]
-        };
+<script>
+        const userNames = [];
+        const quizScores = [];
+        const ctx = document.getElementById("chart").getContext("2d");
+        let chart;
 
-        const ctx = document.getElementById('barChart').getContext('2d');
-        const barChart = new Chart(ctx, {
-            type: 'bar',
-            data: chartData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
+        document.getElementById("addData").addEventListener("click", () => {
+            const userName = document.getElementById("userName").value;
+            const quizScore = parseInt(document.getElementById("quizScore").value);
+            userNames.push(userName);
+            quizScores.push(quizScore);
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: userNames,
+                    datasets: [{
+                        label: "Quiz Score",
+                        data: quizScores,
+                        backgroundColor: "rgba(75, 192, 192, 0.2)",
+                        borderColor: "rgba(75, 192, 192, 1)",
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        function addValue() {
-            const inputValue = document.getElementById('valueInput').value;
-            if (inputValue !== '') {
-                values.push(Number(inputValue));
-                chartData.labels.push(`Value ${values.length}`);
-                barChart.update();
-                document.getElementById('valueInput').value = '';
-            }
-        }
+            document.getElementById("userName").value = "";
+            document.getElementById("quizScore").value = "";
+        });
     </script>
 </body>
 </html>
