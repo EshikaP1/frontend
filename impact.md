@@ -156,7 +156,6 @@ Addressing climate change is important for protecting public health and reducing
     });
 </script>
 
-<!DOCTYPE html>
 <html>
 <head>
     <title>Real-time Air Quality and Lung Cancer Rates</title>
@@ -206,12 +205,12 @@ Addressing climate change is important for protecting public health and reducing
             }],
         };
 
-        // Lung cancer rates in 5 countries
+        // Air pollution in 5 countries
         const lungCancerData = {
-            labels: ['Country A', 'Country B', 'Country C', 'Country D', 'Country E'],
+            labels: ['India', 'China', 'Bangladesh', 'Pakistan', 'Nepal'],
             datasets: [{
-                label: 'Lung Cancer Rates',
-                data: [12, 8, 15, 10, 14],
+                label: '5 Countries with the Worst Air Pollution Rates',
+                data: [500, 200, 200, 200, 150],
                 backgroundColor: 'rgba(255, 99, 132, 0.7)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
