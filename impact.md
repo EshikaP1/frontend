@@ -82,76 +82,69 @@ Addressing climate change is important for protecting public health and reducing
 <p>Quiz time! Answer the questions below to the best of your ability. If you get it wrong, you can press other options to see the right.</p>
 
 <!-- Quiz form section -->
- <div class "quiz-question">
-            <p>1. What is the main source of indoor air pollution in many households?</p>
-            <div class="quiz-options">
-                <input type="radio" name="q1" value="a"> Smoking<br>
-                <input type="radio" name="q1" value="b"> Outdoor air pollution<br>
-                <input type="radio" name="q1" value="c"> Houseplants<br>
-            </div>
-            <div class="quiz-result" id="q1-result"></div>
-        </div>
+<div class="quiz-question">
+    <p>1. What is the main source of indoor air pollution in many households?</p>
+    <div class="quiz-options">
+        <input type="radio" name="q1" value="a"> Smoking<br>
+        <input type="radio" name="q1" value="b"> Outdoor air pollution<br>
+        <input type="radio" name="q1" value="c"> Houseplants<br>
+    </div>
+    <div class="quiz-result" id="q1-result"></div>
+</div>
 
 <!-- Quiz question 2 -->
- <div class="quiz-question">
-            <p>2. Which air pollutant is associated with the formation of acid rain?</p>
-            <div class="quiz-options">
-                <input type="radio" name="q2" value="a"> Carbon monoxide<br>
-                <input type="radio" name="q2" value="b"> Sulfur dioxide<br>
-                <input type="radio" name="q2" value="c"> Nitrogen oxide<br>
-            </div>
-            <div class="quiz-result" id="q2-result"></div>
-        </div>
-
-<!-- Button to submit the quiz -->
- <button onclick="submitQuiz()">Submit Quiz</button>
-
-<!-- Chart for air quality -->
- <div id="chart-container">
-            <h2>Real-time Air Quality</h2>
-            <canvas id="airQualityChart" width="400" height="200"></canvas>
-        </div>
+<div class="quiz-question">
+    <p>2. Which air pollutant is associated with the formation of acid rain?</p>
+    <div class="quiz-options">
+        <input type="radio" name="q2" value="a"> Carbon monoxide<br>
+        <input type="radio" name="q2" value="b"> Sulfur dioxide<br>
+        <input type="radio" name="q2" value="c"> Nitrogen oxide<br>
     </div>
+    <div class="quiz-result" id="q2-result"></div>
+</div>
 
 <!-- JavaScript code section -->
 <script>
-        // JavaScript function for submitting the quiz
-        function submitQuiz() {
-            // Get the selected answers
-            const q1Answer = document.querySelector('input[name="q1"]:checked');
-            const q2Answer = document.querySelector('input[name="q2"]:checked');
+    // JavaScript function for submitting the quiz
+    function submitQuiz() {
+        // Get the selected answers
+        const q1Answer = document.querySelector('input[name="q1"]:checked');
+        const q2Answer = document.querySelector('input[name="q2"]:checked');
 
-            // Check answers and display results
-            if (q1Answer && q2Answer) {
-                if (q1Answer.value === "a") {
-                    document.getElementById("q1-result").textContent = "Correct";
-                } else {
-                    document.getElementById("q1-result").textContent = "Incorrect";
-                }
+        // Check answers and display results
+        if (q1Answer && q2Answer) {
+            if (q1Answer.value === "a") {
+                document.getElementById("q1-result").textContent = "Correct";
+            } else {
+                document.getElementById("q1-result").textContent = "Incorrect";
+            }
 
-                if (q2Answer.value === "b") {
-                    document.getElementById("q2-result").textContent = "Correct";
-                } else {
-                    document.getElementById("q2-result").textContent = "Incorrect";
-                }
+            if (q2Answer.value === "b") {
+                document.getElementById("q2-result").textContent = "Correct";
+            } else {
+                document.getElementById("q2-result").textContent = "Incorrect";
             }
         }
+    }
 
-        // Create a simple air quality chart
-        const ctx = document.getElementById('airQualityChart').getContext('2d');
-        const airQualityChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['PM2.5', 'PM10', 'NO2', 'SO2', 'CO'],
-                datasets: [{
-                    label: 'Air Quality Index',
-                    data: [25, 40, 20, 15, 10],
-                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                       
+    // Create a simple air quality chart
+    const ctx = document.getElementById('airQualityChart').getContext('2d');
+    const airQualityChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['PM2.5', 'PM10', 'NO2', 'SO2', 'CO'],
+            datasets: [{
+                label: 'Air Quality Index',
+                data: [25, 40, 20, 15, 10],
+                backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            scales: {
+                y: {} // Add appropriate configuration here
+            }
+        }
+    });
+</script>
