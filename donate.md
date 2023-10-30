@@ -46,11 +46,10 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 <!-- Conclusion section -->
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
 
-<!-- HTML code section begins -->
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Indoor Air Quality</title>
+    <title>Indoor Air Quality Quiz</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -60,32 +59,32 @@ Your contributions can make a real difference in the fight against lung cancer a
         <!-- Each question is presented as a set of radio buttons -->
     </form>
     <p>Your Score: <span id="score">0</span></p>
-    <!-- A section to display the quiz score -->
-</body>
-</html>
+    <button id="submitBtn">Submit</button>
 
 <script>
-    let score = 0;
-    const answers = document.forms["quizForm"].elements;
+        let score = 0;
+        const answers = document.forms["quizForm"].elements;
 
-    function calculateScore() {
-        for (let i = 0; i < answers.length; i++) {
-            if (answers[i].type === "radio" && answers[i].checked) {
-                score += parseInt(answers[i].value);
+        function calculateScore() {
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].type === "radio" && answers[i].checked) {
+                    score += parseInt(answers[i].value);
+                }
             }
+            document.getElementById("score").textContent = 7 - score; // Calculate the score as 7 minus the total points
+            score = 0; // Reset the score to 0
         }
-        document.getElementById("score").textContent = 7 - score; // Calculate the score as 7 minus the total points
-        score = 0; // Reset the score to 0
-    }
 
-    document.getElementById("submitBtn").addEventListener("click", calculateScore);
-    <!-- JavaScript code for calculating the quiz score and displaying it -->
-</script>
+        document.getElementById("submitBtn").addEventListener("click", calculateScore);
+    </script>
+</body>
+</html>
 
 <!-- HTML code section ends -->
 
 Now compare your scores with your friends! Input your quiz score here and see how it compares with others. The higher the score the less you contribute to air pollution!!
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Indoor Air Quality Scores</title>
@@ -94,15 +93,15 @@ Now compare your scores with your friends! Input your quiz score here and see ho
 <body>
     <h1>Indoor Air Quality Scores</h1>
     <div>
-        <label for "userName">Name:</label>
+        <label for="userName">Name:</label>
         <input type="text" id="userName">
-        <label for "quizScore">Quiz Score:</label>
+        <label for="quizScore">Quiz Score:</label>
         <input type="number" id="quizScore" min="0">
         <button id="addData">Add Data</button>
     </div>
     <canvas id="chart"></canvas>
 
-<script>
+ <script>
         const userNames = [];
         const quizScores = [];
         const ctx = document.getElementById("chart").getContext("2d");
@@ -136,4 +135,9 @@ Now compare your scores with your friends! Input your quiz score here and see ho
                             beginAtZero: true
                         }
                     }
-               
+                }
+            });
+        });
+    </script>
+</body>
+</html>

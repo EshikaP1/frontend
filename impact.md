@@ -209,7 +209,7 @@ Addressing climate change is important for protecting public health and reducing
         const lungCancerData = {
             labels: ['India', 'China', 'Bangladesh', 'Pakistan', 'Nepal'],
             datasets: [{
-                label: '5 Countries with the Worst Air Pollution Rates',
+                label: '5 Countries with the Worst Air Pollution Rates in AQI',
                 data: [500, 200, 200, 200, 150],
                 backgroundColor: 'rgba(255, 99, 132, 0.7)',
                 borderColor: 'rgba(255, 99, 132, 1)',
