@@ -50,8 +50,12 @@ Addressing climate change is important for protecting public health and reducing
     </form>
 
 <div id="result">
-        <!-- The result from the backend will be displayed here -->
-    </div>
+    <!-- The result from the backend will be displayed here -->
+    <p><strong>Total amount of death from lung cancer:</strong></p>
+    <p id="deathCancerData"></p>
+    <p><strong>Total Population:</strong></p>
+    <p id="totalPopulationData"></p>
+</div>
 <script>
     // Listen for the form submission
     // Listen for the form submission
