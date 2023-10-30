@@ -125,107 +125,125 @@ Your contributions can make a real difference in the fight against lung cancer a
 </html>
 
 
+
 <html>
 <head>
-    <title>Aerosol Race Game</title>
+    <title>Climate Change Interactive Game</title>
     <style>
         body {
             text-align: center;
         }
         #game-container {
             margin: 0 auto;
-            width: 800px;
+            width: 400px;
         }
-        #character {
-            width: 50px;
-            height: 50px;
-            position: relative;
-            background-color: blue;
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
         }
-        #aerosol {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            background-color: red;
-        }
-        #item {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            background-color: green;
+        #info-box {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Aerosol Race Game</h1>
+    <h1>Climate Change Interactive Game</h1>
     <div id="game-container">
-        <h2>Race to Good Health</h2>
-        <p>Avoid harmful aerosols and collect lung-healthy items.</p>
-        <div id="character"></div>
-        <div id="aerosol"></div>
-        <div id="item"></div>
-        <p id="score">Score: 0</p>
+        <h2>Choose Your Scenario</h2>
+        <p>Select a scenario and take actions to combat climate change.</p>
+        <button id="scenario-1-button" onclick="startScenario(1)">Scenario 1: Energy Efficiency</button>
+        <button id="scenario-2-button" onclick="startScenario(2)">Scenario 2: Sustainable Transportation</button>
+        <button id="scenario-3-button" onclick="startScenario(3)">Scenario 3: Renewable Energy</button>
+        <button id="scenario-4-button" onclick="startScenario(4)">Scenario 4: Green Diet</button>
+        <button id="scenario-5-button" onclick="startScenario(5)">Scenario 5: Reforestation</button>
+    </div>
+    <div id="info-box">
+        <p id="info-text"></p>
+        <button id="continue-button" onclick="resetGame()">Continue</button>
     </div>
 
 <script>
-        const character = document.getElementById("character");
-        const aerosol = document.getElementById("aerosol");
-        const item = document.getElementById("item");
-        const scoreDisplay = document.getElementById("score");
+        let environmentalScore = 50;
+        let currentScenario = 0;
 
-        let score = 0;
+        const scenarios = [
+            null,
+            {
+                name: "Energy Efficiency",
+                actions: [
+                    { name: "Upgrade home insulation", impact: 10 },
+                    { name: "Switch to LED lights", impact: 5 },
+                    { name: "Use programmable thermostat", impact: 5 }
+                ]
+            },
+            {
+                name: "Sustainable Transportation",
+                actions: [
+                    { name: "Ride a bicycle", impact: 10 },
+                    { name: "Use public transport", impact: 5 },
+                    { name: "Carpool with others", impact: 5 }
+                ]
+            },
+            {
+                name: "Renewable Energy",
+                actions: [
+                    { name: "Install solar panels", impact: 10 },
+                    { name: "Support wind energy projects", impact: 5 },
+                    { name: "Switch to a green energy provider", impact: 5 }
+                ]
+            },
+            {
+                name: "Green Diet",
+                actions: [
+                    { name: "Reduce meat consumption", impact: 10 },
+                    { name: "Eat more plant-based foods", impact: 5 },
+                    { name: "Reduce food waste", impact: 5 }
+                ]
+            },
+            {
+                name: "Reforestation",
+                actions: [
+                    { name: "Plant trees in your community", impact: 10 },
+                    { name: "Support reforestation organizations", impact: 5 },
+                    { name: "Participate in tree-planting events", impact: 5 }
+                ]
+            }
+        ];
 
-        character.style.top = "250px";
-        character.style.left = "50px";
-
-        function moveCharacter(event) {
-            if (event.key === "ArrowUp" && character.style.top !== "0px") {
-                character.style.top = parseInt(character.style.top) - 50 + "px";
-            }
-            if (event.key === "ArrowDown" && character.style.top !== "450px") {
-                character.style.top = parseInt(character.style.top) + 50 + "px";
-            }
-            if (event.key === "ArrowRight" && character.style.left !== "750px") {
-                character.style.left = parseInt(character.style.left) + 50 + "px";
-            }
-            if (event.key === "ArrowLeft" && character.style.left !== "0px") {
-                character.style.left = parseInt(character.style.left) - 50 + "px";
-            }
-
-            checkCollision();
+        function startScenario(scenarioNumber) {
+            currentScenario = scenarioNumber;
+            displayInfo(`You've chosen ${scenarios[scenarioNumber].name} scenario.`);
+            document.getElementById("game-container").style.display = "none";
+            showScenarioActions(scenarios[scenarioNumber].actions);
         }
 
-        function checkCollision() {
-            const characterRect = character.getBoundingClientRect();
-            const aerosolRect = aerosol.getBoundingClientRect();
-            const itemRect = item.getBoundingClientRect();
+        function showScenarioActions(actions) {
+            const actionButtons = actions.map(action => {
+                return `<button onclick="takeAction('${action.name}', ${action.impact})">${action.name}</button>`;
+            });
 
-            if (characterRect.x === aerosolRect.x && characterRect.y === aerosolRect.y) {
-                score -= 10;
-                moveAerosol();
-            }
-
-            if (characterRect.x === itemRect.x && characterRect.y === itemRect.y) {
-                score += 20;
-                moveItem();
-            }
-
-            scoreDisplay.innerText = "Score: " + score;
+            const actionButtonsHTML = actionButtons.join('<br>');
+            document.getElementById("info-text").innerHTML = `Select an action to combat climate change:<br>${actionButtonsHTML}`;
         }
 
-        function moveAerosol() {
-            aerosol.style.left = Math.floor(Math.random() * 15) * 50 + "px";
-            aerosol.style.top = Math.floor(Math.random() * 10) * 50 + "px";
+        function takeAction(action, impact) {
+            environmentalScore += impact;
+            displayInfo(`You took the action: "${action}" and your environmental score is now ${environmentalScore}.`);
         }
 
-        function moveItem() {
-            item.style.left = Math.floor(Math.random() * 15) * 50 + "px";
-            item.style.top = Math.floor(Math.random() * 10) * 50 + "px";
+        function displayInfo(text) {
+            document.getElementById("info-box").style.display = "block";
+            document.getElementById("info-text").innerText = text;
         }
 
-        document.addEventListener("keydown", moveCharacter);
-        moveAerosol();
-        moveItem();
+        function resetGame() {
+            currentScenario = 0;
+            environmentalScore = 50;
+            document.getElementById("game-container").style.display = "block";
+            document.getElementById("info-box").style.display = "none";
+        }
     </script>
 </body>
 </html>
