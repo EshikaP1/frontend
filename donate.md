@@ -49,12 +49,11 @@ Your contributions can make a real difference in the fight against lung cancer a
 <html>
 <head>
     <title>Indoor Air Quality Quiz</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Indoor Air Quality Quiz</h1>
 
- <div>
+<div>
         <label for="userName">Name:</label>
         <input type="text" id="userName">
     </div>
@@ -68,7 +67,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
- <div>
+  <div>
             <label for="gasStove">2) Do you have a gas stove?</label>
             <select id="gasStove">
                 <option value="yes">Yes</option>
@@ -84,7 +83,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-  <div>
+<div>
             <label for="indoorPets">4) Do you have pets that live indoors?</label>
             <select id="indoorPets">
                 <option value="yes">Yes</option>
@@ -92,7 +91,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
- <div>
+<div>
             <label for="moldMildew">5) Have you noticed any visible mold or mildew growth in your home?</label>
             <select id="moldMildew">
                 <option value="yes">Yes</option>
@@ -100,49 +99,14 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-<button id="submitBtn">Submit</button>
+ <button id="submitBtn">Submit</button>
     </form>
 
- <div>
-        <h2>Quiz Scores</h2>
-        <canvas id="chart"></canvas>
-    </div>
-
- <script>
-        const usersData = [];
-        const ctx = document.getElementById("chart").getContext("2d");
-        let chart;
-
+<script>
         document.getElementById("submitBtn").addEventListener("click", () => {
             const userName = document.getElementById("userName").value;
             const score = 5 - getScore();
-            usersData.push({ name: userName, score });
-
-            if (chart) {
-                chart.destroy();
-            }
-
-            chart = new Chart(ctx, {
-                type: "bar",
-                data: {
-                    labels: usersData.map(user => user.name),
-                    datasets: [{
-                        label: "Quiz Score",
-                        data: usersData.map(user => user.score),
-                        backgroundColor: "rgba(75, 192, 192, 0.2)",
-                        borderColor: "rgba(75, 192, 192, 1)",
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            suggestedMax: 5
-                        }
-                    }
-                }
-            });
+            alert(`Hello, ${userName}! Your score is ${score}/5.`);
         });
 
         function getScore() {
