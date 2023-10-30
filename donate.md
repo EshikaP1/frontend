@@ -46,7 +46,6 @@ The Nature Conservancy is dedicated to conserving lands and waters while address
 <!-- Conclusion section -->
 Your contributions can make a real difference in the fight against lung cancer and climate change. These organizations are actively engaged in research, advocacy, and education, and your support can help drive positive change. Thank you for considering a donation to these important causes.
 
-<!DOCTYPE html>
 <html>
 <head>
     <title>Indoor Air Quality Quiz</title>
@@ -55,7 +54,7 @@ Your contributions can make a real difference in the fight against lung cancer a
 <body>
     <h1>Indoor Air Quality Quiz</h1>
 
-<div>
+ <div>
         <label for="userName">Name:</label>
         <input type="text" id="userName">
     </div>
@@ -69,7 +68,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-<div>
+ <div>
             <label for="gasStove">2) Do you have a gas stove?</label>
             <select id="gasStove">
                 <option value="yes">Yes</option>
@@ -77,7 +76,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-  <div>
+ <div>
             <label for="useAirFresheners">3) Do you use scented candles or air fresheners?</label>
             <select id="useAirFresheners">
                 <option value="yes">Yes</option>
@@ -85,7 +84,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
- <div>
+  <div>
             <label for="indoorPets">4) Do you have pets that live indoors?</label>
             <select id="indoorPets">
                 <option value="yes">Yes</option>
@@ -101,39 +100,35 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
- <button id="submitBtn">Submit</button>
+<button id="submitBtn">Submit</button>
     </form>
 
-<div id="charts">
-        <!-- Charts will be displayed here -->
+ <div>
+        <h2>Quiz Scores</h2>
+        <canvas id="chart"></canvas>
     </div>
 
-<script>
+ <script>
         const usersData = [];
-        const chartsContainer = document.getElementById("charts");
+        const ctx = document.getElementById("chart").getContext("2d");
+        let chart;
 
         document.getElementById("submitBtn").addEventListener("click", () => {
             const userName = document.getElementById("userName").value;
             const score = 5 - getScore();
             usersData.push({ name: userName, score });
 
-            createChart(userName, score);
-        });
+            if (chart) {
+                chart.destroy();
+            }
 
-        function createChart(userName, score) {
-            const chartCanvas = document.createElement("canvas");
-            chartCanvas.width = 400;
-            chartCanvas.height = 200;
-            chartsContainer.appendChild(chartCanvas);
-
-            const ctx = chartCanvas.getContext("2d");
-            new Chart(ctx, {
+            chart = new Chart(ctx, {
                 type: "bar",
                 data: {
-                    labels: [userName],
+                    labels: usersData.map(user => user.name),
                     datasets: [{
                         label: "Quiz Score",
-                        data: [score],
+                        data: usersData.map(user => user.score),
                         backgroundColor: "rgba(75, 192, 192, 0.2)",
                         borderColor: "rgba(75, 192, 192, 1)",
                         borderWidth: 1
@@ -148,7 +143,7 @@ Your contributions can make a real difference in the fight against lung cancer a
                     }
                 }
             });
-        }
+        });
 
         function getScore() {
             let score = 0;
