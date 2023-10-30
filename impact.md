@@ -51,34 +51,38 @@ Addressing climate change is important for protecting public health and reducing
 
 <div id="result">
     <!-- The result from the backend will be displayed here -->
-    <p><strong>Total amount of death from lung cancer:</strong></p>
     <p id="deathCancerData"></p>
-    <p><strong>Total Population:</strong></p>
     <p id="totalPopulationData"></p>
 </div>
+
 <script>
     // Listen for the form submission
-    // Listen for the form submission
-document.getElementById('stateForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission
-    // Get the state name from the input field
-    const stateName = document.getElementById('stateInput').value;
-    // Send the stateName to the backend using a fetch request
-    fetch(`http://localhost:5000/api/data/state/${stateName}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Convert the JSON object to a string and display it
-        document.getElementById('result').textContent = `Result from the backend: ${JSON.stringify(data)}`;
-    })
-    .catch(error => {
-        console.error('Error:', error);
+    document.getElementById('stateForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        // Get the state name from the input field
+        const stateName = document.getElementById('stateInput').value;
+        // Send the stateName to the backend using a fetch request
+        fetch(`http://localhost:5000/api/data/state/${stateName}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display the data in the corresponding elements
+            document.getElementById('deathCancerData').textContent = `Total amount of death from lung cancer: ${data['Total amount of death from lung cancer']}`;
+            document.getElementById('totalPopulationData').textContent = `Total Population: ${data['TotalPopulation']}`;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     });
-});
-
 </script>
 </body>
+
+
+
+
+
+
