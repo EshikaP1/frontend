@@ -58,7 +58,7 @@ Your contributions can make a real difference in the fight against lung cancer a
         <input type="text" id="userName">
     </div>
 
- <form id="quizForm">
+<form id="quizForm">
         <div>
             <label for="smokeIndoors">1) Do you smoke inside your house?</label>
             <select id="smokeIndoors">
@@ -67,7 +67,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-  <div>
+ <div>
             <label for="gasStove">2) Do you have a gas stove?</label>
             <select id="gasStove">
                 <option value="yes">Yes</option>
@@ -83,7 +83,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-<div>
+  <div>
             <label for="indoorPets">4) Do you have pets that live indoors?</label>
             <select id="indoorPets">
                 <option value="yes">Yes</option>
@@ -91,7 +91,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
-<div>
+ <div>
             <label for="moldMildew">5) Have you noticed any visible mold or mildew growth in your home?</label>
             <select id="moldMildew">
                 <option value="yes">Yes</option>
@@ -99,7 +99,7 @@ Your contributions can make a real difference in the fight against lung cancer a
             </select>
         </div>
 
- <button id="submitBtn">Submit</button>
+<button id="submitBtn" type="button">Submit</button>
     </form>
 
 <script>
@@ -123,3 +123,4 @@ Your contributions can make a real difference in the fight against lung cancer a
     </script>
 </body>
 </html>
+
