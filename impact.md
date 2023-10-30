@@ -103,6 +103,9 @@ Addressing climate change is important for protecting public health and reducing
     <div class="quiz-result" id="q2-result"></div>
 </div>
 
+<!-- Button to submit the quiz -->
+<button id="submitQuizButton">Submit Quiz</button>
+
 <!-- JavaScript code section -->
 <script>
     // JavaScript function for submitting the quiz
@@ -127,6 +130,10 @@ Addressing climate change is important for protecting public health and reducing
         }
     }
 
+    // Add an event listener to the submit button
+    const submitButton = document.getElementById("submitQuizButton");
+    submitButton.addEventListener("click", submitQuiz);
+
     // Create a simple air quality chart
     const ctx = document.getElementById('airQualityChart').getContext('2d');
     const airQualityChart = new Chart(ctx, {
@@ -148,3 +155,96 @@ Addressing climate change is important for protecting public health and reducing
         }
     });
 </script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Air Quality and Lung Cancer Rates</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #chart-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-time Air Quality and Lung Cancer Rates</h1>
+
+   <!-- Chart for real-time air quality data -->
+  <div id="airQualityChartContainer">
+            <h2>Real-time Air Quality Data</h2>
+            <canvas id="airQualityChart" width="400" height="200"></canvas>
+        </div>
+
+ <!-- Chart for comparing lung cancer rates of 5 countries -->
+ <div id="lungCancerChartContainer">
+            <h2>Lung Cancer Rates in 5 Countries</h2>
+            <canvas id="lungCancerChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+<script>
+        // Real-time air quality data
+        const airQualityData = {
+            labels: ['PM2.5', 'PM10', 'NO2', 'SO2', 'CO'],
+            datasets: [{
+                label: 'Air Quality Index',
+                data: [25, 40, 20, 15, 10],
+                backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+            }],
+        };
+
+        // Lung cancer rates in 5 countries
+        const lungCancerData = {
+            labels: ['Country A', 'Country B', 'Country C', 'Country D', 'Country E'],
+            datasets: [{
+                label: 'Lung Cancer Rates',
+                data: [12, 8, 15, 10, 14],
+                backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+            }],
+        };
+
+        // Create real-time air quality chart
+        const airQualityCtx = document.getElementById('airQualityChart').getContext('2d');
+        new Chart(airQualityCtx, {
+            type: 'bar',
+            data: airQualityData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+
+        // Create lung cancer rates chart
+        const lungCancerCtx = document.getElementById('lungCancerChart').getContext('2d');
+        new Chart(lungCancerCtx, {
+            type: 'bar',
+            data: lungCancerData,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>
