@@ -106,13 +106,9 @@ Lung cancer is a serious and potentially life-threatening condition that require
 - [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/lung-cancer/symptoms-causes/syc-20374620)
 - [Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/4375-lung-cancer)
 
-<<<<<<< HEAD
 <!-- Section: Lung Cancer Quiz -->
 ## <span style="color: #228B22"> Lung Cancer Quiz </span>
-=======
 <body>
-    <h1>Lung Cancer Quiz</h1>
-
     <div id="questions">
         <!-- Question 1 -->
         <div class="question">
@@ -125,7 +121,7 @@ Lung cancer is a serious and potentially life-threatening condition that require
         </div>
 
         <!-- Question 2 -->
-        <div class="question">
+ <div class="question">
             <p>What is the primary cause of lung cancer?</p>
             <div class="options">
                 <input type="checkbox" id="q2-option1" data-correct="true"> <label for="q2-option1">Exposure to carcinogens</label><br>
@@ -136,7 +132,7 @@ Lung cancer is a serious and potentially life-threatening condition that require
         </div>
 
         <!-- Question 3 -->
-        <div class="question">
+ <div class="question">
             <p>What are common symptoms of lung cancer?</p>
             <div class="options">
                 <input type="checkbox" id="q3-option1" data-correct="true"> <label for="q3-option1">Coughing up blood</label><br>
@@ -148,7 +144,7 @@ Lung cancer is a serious and potentially life-threatening condition that require
         </div>
     </div>
 
-    <script>
+<script>
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
@@ -172,4 +168,3 @@ Lung cancer is a serious and potentially life-threatening condition that require
         }
     </script>
 </body>
->>>>>>> parent of da1b166 (changes)
