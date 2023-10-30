@@ -124,3 +124,77 @@ Your contributions can make a real difference in the fight against lung cancer a
 </body>
 </html>
 
+
+<html>
+<head>
+  <title>Lung Cancer Awareness Game</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    #game-container {
+      margin: 0 auto;
+      width: 400px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #info-box {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lung Cancer Awareness Game</h1>
+  <div id="game-container">
+    <h2>Choose Wisely</h2>
+    <p>Help our character make healthy choices to reduce the risk of lung cancer.</p>
+    <button id="smoke-button" onclick="makeChoice('smoke')">Smoke a Cigarette</button>
+    <button id="exercise-button" onclick="makeChoice('exercise')">Exercise</button>
+    <button id="eat-healthy-button" onclick="makeChoice('eat-healthy')">Eat Healthy</button>
+  </div>
+  <div id="info-box">
+    <p id="info-text"></p>
+    <button id="continue-button" onclick="resetGame()">Continue</button>
+  </div>
+
+  <script>
+    let healthScore = 100;
+
+    function makeChoice(choice) {
+      let infoText = "";
+      if (choice === 'smoke') {
+        healthScore -= 20;
+        infoText = "Smoking cigarettes increases the risk of lung cancer.";
+      } else if (choice === 'exercise') {
+        healthScore += 10;
+        infoText = "Regular exercise can help reduce the risk of lung cancer.";
+      } else if (choice === 'eat-healthy') {
+        healthScore += 10;
+        infoText = "A healthy diet can lower the risk of lung cancer.";
+      }
+
+      if (healthScore < 0) {
+        healthScore = 0;
+      }
+
+      displayInfo(infoText);
+    }
+
+    function displayInfo(text) {
+      document.getElementById("game-container").style.display = "none";
+      document.getElementById("info-text").innerText = text;
+      document.getElementById("info-box").style.display = "block";
+    }
+
+    function resetGame() {
+      healthScore = 100;
+      document.getElementById("game-container").style.display = "block";
+      document.getElementById("info-box").style.display = "none";
+    }
+  </script>
+</body>
+</html>
+
