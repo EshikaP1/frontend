@@ -102,3 +102,125 @@ For further information and resources on climate change, consider exploring the 
 <!-- List of resources and links related to climate change -->
 
 Climate change is a complex and urgent global challenge that requires collective action. Understanding its causes, effects, and the steps we can take to address it is crucial for the well-being of current and future generations. By working together, we can mitigate the impacts of climate change and create a more sustainable and resilient world.
+
+<html>
+<head>
+    <title>How Climate Change friendly are you?</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #game-container {
+            margin: 0 auto;
+            width: 400px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #info-box {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>How Climate Change friendly are you?</h1>
+    <div id="game-container">
+        <h2>Choose Your Scenario</h2>
+        <p>Select a scenario and take actions to combat climate change.</p>
+        <button id="scenario-1-button" onclick="startScenario(1)">Scenario 1: Energy Efficiency</button>
+        <button id="scenario-2-button" onclick="startScenario(2)">Scenario 2: Sustainable Transportation</button>
+        <button id="scenario-3-button" onclick="startScenario(3)">Scenario 3: Renewable Energy</button>
+        <button id="scenario-4-button" onclick="startScenario(4)">Scenario 4: Green Diet</button>
+        <button id="scenario-5-button" onclick="startScenario(5)">Scenario 5: Reforestation</button>
+    </div>
+    <div id="info-box">
+        <p id="info-text"></p>
+        <button id="continue-button" onclick="resetGame()">Continue</button>
+    </div>
+
+<script>
+        let environmentalScore = 50;
+        let currentScenario = 0;
+
+        const scenarios = [
+            null,
+            {
+                name: "Energy Efficiency",
+                actions: [
+                    { name: "Upgrade home insulation", impact: 10 },
+                    { name: "Switch to LED lights", impact: 5 },
+                    { name: "Use programmable thermostat", impact: 5 }
+                ]
+            },
+            {
+                name: "Sustainable Transportation",
+                actions: [
+                    { name: "Ride a bicycle", impact: 10 },
+                    { name: "Use public transport", impact: 5 },
+                    { name: "Carpool with others", impact: 5 }
+                ]
+            },
+            {
+                name: "Renewable Energy",
+                actions: [
+                    { name: "Install solar panels", impact: 10 },
+                    { name: "Support wind energy projects", impact: 5 },
+                    { name: "Switch to a green energy provider", impact: 5 }
+                ]
+            },
+            {
+                name: "Green Diet",
+                actions: [
+                    { name: "Reduce meat consumption", impact: 10 },
+                    { name: "Eat more plant-based foods", impact: 5 },
+                    { name: "Reduce food waste", impact: 5 }
+                ]
+            },
+            {
+                name: "Reforestation",
+                actions: [
+                    { name: "Plant trees in your community", impact: 10 },
+                    { name: "Support reforestation organizations", impact: 5 },
+                    { name: "Participate in tree-planting events", impact: 5 }
+                ]
+            }
+        ];
+
+        function startScenario(scenarioNumber) {
+            currentScenario = scenarioNumber;
+            displayInfo(`You've chosen ${scenarios[scenarioNumber].name} scenario.`);
+            document.getElementById("game-container").style.display = "none";
+            showScenarioActions(scenarios[scenarioNumber].actions);
+        }
+
+        function showScenarioActions(actions) {
+            const actionButtons = actions.map(action => {
+                return `<button onclick="takeAction('${action.name}', ${action.impact})">${action.name}</button>`;
+            });
+
+            const actionButtonsHTML = actionButtons.join('<br>');
+            document.getElementById("info-text").innerHTML = `Select an action to combat climate change:<br>${actionButtonsHTML}`;
+        }
+
+        function takeAction(action, impact) {
+            environmentalScore += impact;
+            displayInfo(`You took the action: "${action}" and your environmental score is now ${environmentalScore}.`);
+        }
+
+        function displayInfo(text) {
+            document.getElementById("info-box").style.display = "block";
+            document.getElementById("info-text").innerText = text;
+        }
+
+        function resetGame() {
+            currentScenario = 0;
+            environmentalScore = 50;
+            document.getElementById("game-container").style.display = "block";
+            document.getElementById("info-box").style.display = "none";
+        }
+    </script>
+</body>
+</html>
