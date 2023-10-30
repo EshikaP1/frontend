@@ -127,74 +127,73 @@ Your contributions can make a real difference in the fight against lung cancer a
 
 <html>
 <head>
-  <title>Lung Cancer Awareness Game</title>
-  <style>
-    body {
-      text-align: center;
-    }
-    #game-container {
-      margin: 0 auto;
-      width: 400px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #info-box {
-      display: none;
-    }
-  </style>
+    <title>Air Pollution Awareness Game</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #game-container {
+            margin: 0 auto;
+            width: 400px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #info-box {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <h1>Lung Cancer Awareness Game</h1>
-  <div id="game-container">
-    <h2>Choose Wisely</h2>
-    <p>Help our character make healthy choices to reduce the risk of lung cancer.</p>
-    <button id="smoke-button" onclick="makeChoice('smoke')">Smoke a Cigarette</button>
-    <button id="exercise-button" onclick="makeChoice('exercise')">Exercise</button>
-    <button id="eat-healthy-button" onclick="makeChoice('eat-healthy')">Eat Healthy</button>
-  </div>
-  <div id="info-box">
-    <p id="info-text"></p>
-    <button id="continue-button" onclick="resetGame()">Continue</button>
-  </div>
+    <h1>Air Pollution Awareness Game</h1>
+    <div id="game-container">
+        <h2>Reduce Air Pollution</h2>
+        <p>Help clean the air by making environmentally friendly choices.</p>
+        <button id="car-button" onclick="makeChoice('car')">Drive a Gasoline Car</button>
+        <button id="bike-button" onclick="makeChoice('bike')">Ride a Bicycle</button>
+        <button id="recycle-button" onclick="makeChoice('recycle')">Recycle</button>
+    </div>
+    <div id="info-box">
+        <p id="info-text"></p>
+        <button id="continue-button" onclick="resetGame()">Continue</button>
+    </div>
 
-  <script>
-    let healthScore = 100;
+<script>
+        let pollutionLevel = 0;
 
-    function makeChoice(choice) {
-      let infoText = "";
-      if (choice === 'smoke') {
-        healthScore -= 20;
-        infoText = "Smoking cigarettes increases the risk of lung cancer.";
-      } else if (choice === 'exercise') {
-        healthScore += 10;
-        infoText = "Regular exercise can help reduce the risk of lung cancer.";
-      } else if (choice === 'eat-healthy') {
-        healthScore += 10;
-        infoText = "A healthy diet can lower the risk of lung cancer.";
-      }
+        function makeChoice(choice) {
+            let infoText = "";
+            if (choice === 'car') {
+                pollutionLevel += 20;
+                infoText = "Driving a gasoline car increases air pollution.";
+            } else if (choice === 'bike') {
+                pollutionLevel -= 10;
+                infoText = "Riding a bicycle reduces air pollution.";
+            } else if (choice === 'recycle') {
+                pollutionLevel -= 5;
+                infoText = "Recycling helps reduce waste and air pollution.";
+            }
 
-      if (healthScore < 0) {
-        healthScore = 0;
-      }
+            if (pollutionLevel < 0) {
+                pollutionLevel = 0;
+            }
 
-      displayInfo(infoText);
-    }
+            displayInfo(infoText);
+        }
 
-    function displayInfo(text) {
-      document.getElementById("game-container").style.display = "none";
-      document.getElementById("info-text").innerText = text;
-      document.getElementById("info-box").style.display = "block";
-    }
+        function displayInfo(text) {
+            document.getElementById("game-container").style.display = "none";
+            document.getElementById("info-text").innerText = text;
+            document.getElementById("info-box").style.display = "block";
+        }
 
-    function resetGame() {
-      healthScore = 100;
-      document.getElementById("game-container").style.display = "block";
-      document.getElementById("info-box").style.display = "none";
-    }
-  </script>
+        function resetGame() {
+            pollutionLevel = 0;
+            document.getElementById("game-container").style.display = "block";
+            document.getElementById("info-box").style.display = "none";
+        }
+    </script>
 </body>
 </html>
-
