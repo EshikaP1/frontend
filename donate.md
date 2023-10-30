@@ -106,7 +106,7 @@ Your contributions can make a real difference in the fight against lung cancer a
         document.getElementById("submitBtn").addEventListener("click", () => {
             const userName = document.getElementById("userName").value;
             const score = 5 - getScore();
-            alert(`Hello, ${userName}! Your score is ${score}/5.`);
+            alert(`Hello, ${userName}! Your score is ${score}. The less your score the better, so try being more environmentally friendly inside your house to reduce air pollution!!`);
         });
 
         function getScore() {
