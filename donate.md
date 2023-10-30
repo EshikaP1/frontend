@@ -124,64 +124,108 @@ Your contributions can make a real difference in the fight against lung cancer a
 </body>
 </html>
 
-<!DOCTYPE html>
+
 <html>
 <head>
-    <title>Plant Trees Game</title>
+    <title>Aerosol Race Game</title>
     <style>
         body {
             text-align: center;
         }
         #game-container {
             margin: 0 auto;
-            width: 400px;
+            width: 800px;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+        #character {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            background-color: blue;
         }
-        #info-box {
-            display: none;
+        #aerosol {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+        #item {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: green;
         }
     </style>
 </head>
 <body>
-    <h1>Plant Trees Game</h1>
+    <h1>Aerosol Race Game</h1>
     <div id="game-container">
-        <h2>Combat Climate Change</h2>
-        <p>Help reduce carbon emissions by planting trees.</p>
-        <button id="plant-button" onclick="plantTree()">Plant a Tree</button>
-        <button id="end-button" onclick="endGame()">End Game</button>
-    </div>
-    <div id="info-box">
-        <p id="info-text"></p>
-        <button id="continue-button" onclick="resetGame()">Continue</button>
+        <h2>Race to Good Health</h2>
+        <p>Avoid harmful aerosols and collect lung-healthy items.</p>
+        <div id="character"></div>
+        <div id="aerosol"></div>
+        <div id="item"></div>
+        <p id="score">Score: 0</p>
     </div>
 
- <script>
-        let treesPlanted = 0;
+<script>
+        const character = document.getElementById("character");
+        const aerosol = document.getElementById("aerosol");
+        const item = document.getElementById("item");
+        const scoreDisplay = document.getElementById("score");
 
-        function plantTree() {
-            treesPlanted++;
-            displayInfo(`You've planted ${treesPlanted} trees. Keep up the good work to combat climate change!`);
+        let score = 0;
+
+        character.style.top = "250px";
+        character.style.left = "50px";
+
+        function moveCharacter(event) {
+            if (event.key === "ArrowUp" && character.style.top !== "0px") {
+                character.style.top = parseInt(character.style.top) - 50 + "px";
+            }
+            if (event.key === "ArrowDown" && character.style.top !== "450px") {
+                character.style.top = parseInt(character.style.top) + 50 + "px";
+            }
+            if (event.key === "ArrowRight" && character.style.left !== "750px") {
+                character.style.left = parseInt(character.style.left) + 50 + "px";
+            }
+            if (event.key === "ArrowLeft" && character.style.left !== "0px") {
+                character.style.left = parseInt(character.style.left) - 50 + "px";
+            }
+
+            checkCollision();
         }
 
-        function displayInfo(text) {
-            document.getElementById("game-container").style.display = "none";
-            document.getElementById("info-text").innerText = text;
-            document.getElementById("info-box").style.display = "block";
+        function checkCollision() {
+            const characterRect = character.getBoundingClientRect();
+            const aerosolRect = aerosol.getBoundingClientRect();
+            const itemRect = item.getBoundingClientRect();
+
+            if (characterRect.x === aerosolRect.x && characterRect.y === aerosolRect.y) {
+                score -= 10;
+                moveAerosol();
+            }
+
+            if (characterRect.x === itemRect.x && characterRect.y === itemRect.y) {
+                score += 20;
+                moveItem();
+            }
+
+            scoreDisplay.innerText = "Score: " + score;
         }
 
-        function endGame() {
-            displayInfo(`You've planted a total of ${treesPlanted} trees, contributing to a healthier planet.`);
+        function moveAerosol() {
+            aerosol.style.left = Math.floor(Math.random() * 15) * 50 + "px";
+            aerosol.style.top = Math.floor(Math.random() * 10) * 50 + "px";
         }
 
-        function resetGame() {
-            treesPlanted = 0;
-            document.getElementById("game-container").style.display = "block";
-            document.getElementById("info-box").style.display = "none";
+        function moveItem() {
+            item.style.left = Math.floor(Math.random() * 15) * 50 + "px";
+            item.style.top = Math.floor(Math.random() * 10) * 50 + "px";
         }
+
+        document.addEventListener("keydown", moveCharacter);
+        moveAerosol();
+        moveItem();
     </script>
 </body>
 </html>
