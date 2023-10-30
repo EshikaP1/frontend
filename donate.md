@@ -124,10 +124,10 @@ Your contributions can make a real difference in the fight against lung cancer a
 </body>
 </html>
 
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Air Pollution Awareness Game</title>
+    <title>Plant Trees Game</title>
     <style>
         body {
             text-align: center;
@@ -147,40 +147,24 @@ Your contributions can make a real difference in the fight against lung cancer a
     </style>
 </head>
 <body>
-    <h1>Air Pollution Awareness Game</h1>
+    <h1>Plant Trees Game</h1>
     <div id="game-container">
-        <h2>Reduce Air Pollution</h2>
-        <p>Help clean the air by making environmentally friendly choices.</p>
-        <button id="car-button" onclick="makeChoice('car')">Drive a Gasoline Car</button>
-        <button id="bike-button" onclick="makeChoice('bike')">Ride a Bicycle</button>
-        <button id="recycle-button" onclick="makeChoice('recycle')">Recycle</button>
+        <h2>Combat Climate Change</h2>
+        <p>Help reduce carbon emissions by planting trees.</p>
+        <button id="plant-button" onclick="plantTree()">Plant a Tree</button>
+        <button id="end-button" onclick="endGame()">End Game</button>
     </div>
     <div id="info-box">
         <p id="info-text"></p>
         <button id="continue-button" onclick="resetGame()">Continue</button>
     </div>
 
-<script>
-        let pollutionLevel = 0;
+ <script>
+        let treesPlanted = 0;
 
-        function makeChoice(choice) {
-            let infoText = "";
-            if (choice === 'car') {
-                pollutionLevel += 20;
-                infoText = "Driving a gasoline car increases air pollution.";
-            } else if (choice === 'bike') {
-                pollutionLevel -= 10;
-                infoText = "Riding a bicycle reduces air pollution.";
-            } else if (choice === 'recycle') {
-                pollutionLevel -= 5;
-                infoText = "Recycling helps reduce waste and air pollution.";
-            }
-
-            if (pollutionLevel < 0) {
-                pollutionLevel = 0;
-            }
-
-            displayInfo(infoText);
+        function plantTree() {
+            treesPlanted++;
+            displayInfo(`You've planted ${treesPlanted} trees. Keep up the good work to combat climate change!`);
         }
 
         function displayInfo(text) {
@@ -189,8 +173,12 @@ Your contributions can make a real difference in the fight against lung cancer a
             document.getElementById("info-box").style.display = "block";
         }
 
+        function endGame() {
+            displayInfo(`You've planted a total of ${treesPlanted} trees, contributing to a healthier planet.`);
+        }
+
         function resetGame() {
-            pollutionLevel = 0;
+            treesPlanted = 0;
             document.getElementById("game-container").style.display = "block";
             document.getElementById("info-box").style.display = "none";
         }
