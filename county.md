@@ -1,12 +1,6 @@
----
-layout: default
-title: Aerosol data
----
-
-
 <html>
 <head>
-    <title>County and State Input</title>
+    <title>Aerosol Data</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 </head>
 <body>
@@ -22,21 +16,21 @@ title: Aerosol data
         <!-- The pie chart for county data will be displayed here -->
     </div>
 
-<!-- Add a separator or some text here if you want to separate the results -->
+    <!-- Add a separator or some text here if you want to separate the results -->
 
-<h1>Enter a State Name</h1>
-    <form id= "stateForm">
+    <h1>Enter a State Name</h1>
+    <form id="stateForm">
         <input type="text" id="stateInput" placeholder="Enter a state name">
         <button type="submit">Submit</button>
     </form>
-<div id="stateResult">
+    <div id="stateResult">
         <!-- The result for state data from the backend will be displayed here -->
     </div>
     <div id="statePieChart">
         <!-- The pie chart for state data will be displayed here -->
     </div>
 
-<script>
+    <script>
         // County Form Submission
         document.getElementById('countyForm').addEventListener('submit', function (e) {
             e.preventDefault();
