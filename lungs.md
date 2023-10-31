@@ -173,6 +173,3 @@ Lung cancer is a serious and potentially life-threatening condition that require
 </body>
 </html>
 =======
-<!-- Section: Lung Cancer Quiz -->
-## <span style="color: #228B22"> Lung Cancer Quiz </span>
->>>>>>> 305f9dcd64d60cb8619845a51adeef2b439fc425
