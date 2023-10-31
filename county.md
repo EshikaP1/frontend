@@ -3,6 +3,9 @@ layout: default
 title: Aerosol data
 ---
 
+![Alt text](images/COUNTIES.png)
+
+Here is the number of lung cancer cases by county. 
 
 <html>
 <head>
