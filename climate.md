@@ -224,3 +224,90 @@ Climate change is a complex and urgent global challenge that requires collective
     </script>
 </body>
 </html>
+
+<html>
+<head>
+    <title>County Input</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Enter a County Name</h1>
+    <form id="countyForm">
+        <input type="text" id="countyInput" placeholder="Enter a county name">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result">
+        <!-- The result from the backend will be displayed here -->
+    </div>
+
+    <script>
+        // Listen for the form submission
+        document.getElementById('countyForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            // Get the county name from the input field
+            const countyName = document.getElementById('countyInput').value;
+            // Send the countyName to the backend using a fetch request
+            fetch(`http://localhost:5000/api/data/county/${countyName}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => {
+                if (response.status === 404) {
+                    // Handle the case when data is not found
+                    return { error: "County data not found" };
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    // Display the error message
+                    document.getElementById('result').textContent = `Error: ${data.error}`;
+                } else {
+                    // Display the county data as pie charts
+                    const resultHtml = `
+                        <h2>Air Pollution in ${data.County}</h2>
+                        <canvas id="airPollutionChart"></canvas>
+                    `;
+                    document.getElementById('result').innerHTML = resultHtml;
+
+                    // Create a pie chart
+                    new Chart(document.getElementById('airPollutionChart'), {
+                        type: 'pie',
+                        data: {
+                            labels: ['Good Days', 'Moderate Days', 'Unhealthy Days', 'Very Unhealthy Days', 'Hazardous Days'],
+                            datasets: [{
+                                data: [data['Good Days'], data['Moderate Days'], data['Unhealthy Days'], data['Very Unhealthy Days'], data['Hazardous Days']],
+                                backgroundColor: ['green', 'yellow', 'orange', 'red', 'purple'],
+                            }],
+                        },
+                        options: {
+                            tooltips: {
+                                callbacks: {
+                                    label: function (tooltipItem, data) {
+                                        const dataset = data.datasets[tooltipItem.datasetIndex];
+                                        const total = dataset.data.reduce((prev, current) => prev + current);
+                                        const currentValue = dataset.data[tooltipItem.index];
+                                        const percentage = ((currentValue / total) * 100).toFixed(2);
+                                        return `${data.labels[tooltipItem.index]}: ${percentage}%`;
+                                    },
+                                },
+                            },
+                            title: {
+                                display: true,
+                                text: `Air Pollution in ${data.County}`,
+                            },
+                        },
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+
