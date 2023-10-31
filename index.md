@@ -2,27 +2,95 @@
 layout: default
 title: Student Blog
 ---
-![Alt text](images/HOME.png)
+# Lung Cancer and Climate Change
 
-<!-- Title and introductory images -->
-<p style="text-align: center; font-weight:800; font-size: 40px">Lung Cancer and Climate Change</p>
-<p style="text-align: center; font-weight:600; font-size: 20px; color:#00B07B">Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.</p>
+Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.
 
-![Alt text](images/sick-earth-face-mask-sick-earth-face-mask-worried-face-disease-pandemic-global-health-crisis-cute-cartoon-drawing-178912005.webp)
+[About](about.html) | [Causes](causes.html) | [Solutions](solutions.html)
 
-<!-- Introduction to the impact of climate change -->
-<p style="text-align: center; font-weight:600; font-size: 20px; color:#00B07B">Climate change affects so many of us, and we want you to know the health impacts of this issue.</p>
+&copy; 2023 Lung Cancer and Climate Change
 
-<!-- Section: Lung Cancer -->
-<p style="text-align: center; font-weight:800; font-size: 40px">Lung Cancer</p>
-<p style="text-align: center; font-weight:600; font-size: 20px; color:#00B07B">Lung Cancer is among the leading causes of death in people in the United States. We want to spread awareness about lung cancer as not many people know of this issue.</p>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer and Climate Change</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lung Cancer and Climate Change</h1>
+        <p>Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.</p>
+    </header>
 
-<!-- Section: Climate Change -->
-<p style="text-align: center; font-weight:800; font-size: 40px">Climate Change</p>
-<p style="text-align: center; font-weight:600; font-size: 20px; color:#00B07B">We've all heard of climate change. But did you know there are so many other implications of this issue? We will tell you some of those impacts.</p>
+    <section class="button-container">
+        <a href="about.html" class="button">About</a>
+        <a href="causes.html" class="button">Causes</a>
+        <a href "solutions.html" class="button">Solutions</a>
+    </section>
 
-<!-- Section: How can you help? -->
-<p style="text-align: center; font-weight:800; font-size: 40px">How can you help?</p>
-<p style="text-align: center; font-weight:600; font-size: 20px; color:#00B07B">We will tell you ways YOU can help with this issue.</p>
+    <footer>
+        <p>&copy; 2023 Lung Cancer and Climate Change</p>
+    </footer>
+</body>
+</html>
 
-![Alt text](images/istockphoto-1149674707-612x612.jpg)
+```css
+```css
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 10px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45A844;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
