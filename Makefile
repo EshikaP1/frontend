@@ -51,20 +51,17 @@ default: server
 	@# outputs startup log, removes last line ($$d) as ctl-c message is not applicable for background process
 	@sed '$$d' $(LOG_FILE)
 
-
-
 # Start the local web server
 server: stop convert
 	@echo "Starting server..."
-	@@nohup bundle exec jekyll serve -H 127.0.0.1 -P $(PORT) > $(LOG_FILE) 2>&1 & \
-		PID=$$!; \
-		echo "Server PID: $$PID"
-	@@until [ -f $(LOG_FILE) ]; do sleep 1; done
-
+	@nohup bundle exec jekyll serve -H 127.0.0.1 -P $(PORT) > $(LOG_FILE) 2>&1 & \
+	PID=$$!; \
+	echo "Server PID: $$PID"
+	@until [ -f $(LOG_FILE) ]; do sleep 1; done
 
 # Convert .ipynb files to Markdown with front matter
 convert: $(MARKDOWN_FILES)
-	
+
 # Convert .md file, if .ipynb file is newer
 $(DESTINATION_DIRECTORY)/%_IPYNB_2_.md: _notebooks/%.ipynb
 	@echo "Converting source $< to destination $@"
@@ -73,17 +70,16 @@ $(DESTINATION_DIRECTORY)/%_IPYNB_2_.md: _notebooks/%.ipynb
 # Clean up project derived files, to avoid run issues stop is dependency
 clean: stop
 	@echo "Cleaning converted IPYNB files..."
-	@@rm -f _posts/*_IPYNB_2_.md
+	@rm -f _posts/*_IPYNB_2_.md
 	@rm -rf _site
-
 
 # Stop the server and kill processes
 stop:
 	@echo "Stopping server..."
 	@# kills process running on port $(PORT)
-	@@lsof -ti :$(PORT) | xargs kill >/dev/null 2>&1 || true
+	@lsof -ti :$(PORT) | xargs kill >/dev/null 2>&1 || true
 	@echo "Stopping logging process..."
 	@# kills previously running logging processes
-	@@ps aux | awk -v log_file=$(LOG_FILE) '$$0 ~ "tail -f " log_file { print $$2 }' | xargs kill >/dev/null 2>&1 || true
+	@ps aux | awk -v log_file=$(LOG_FILE) '$$0 ~ "tail -f " log_file { print $$2 }' | xargs kill >/dev/null 2>&1 || true
 	@# removes log
 	@rm -f $(LOG_FILE)
