@@ -11,7 +11,7 @@ Did you know that lung cancer is caused by climate change? On this website, we w
 &copy; 2023 Lung Cancer and Climate Change
 
 ```html
-<!DOCTYPE html>
+
 <html>
 <head>
     <title>Lung Cancer and Climate Change</title>
