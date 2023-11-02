@@ -13,7 +13,6 @@ Did you know that lung cancer is caused by climate change? On this website, we w
 [**Lung Cancer Api**](/distribution.md)
 This api will demonstrate the lung cancer cases per population in a state. 
 
-<<<<<<< HEAD
 ```html
 
 <html>
@@ -26,9 +25,7 @@ This api will demonstrate the lung cancer cases per population in a state.
         <h1>Lung Cancer and Climate Change</h1>
         <p>Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.</p>
     </header>
-=======
 [**Lung Cancer**](lungs.md)
->>>>>>> 5cc0670fbb68c9407bcd961b2f9e0a5fd337db0d
 
 Climate change affects so many of us, and we want you to know the health impacts of this issue.
 
