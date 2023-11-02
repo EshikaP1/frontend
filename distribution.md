@@ -11,6 +11,11 @@ title: Distrubution
 Here is an interactive where you type in a state name and you get the number of lung cancer cases it has!
 
 <!-- Title and introductory information about an interactive lung cancer data lookup by state -->
+<html>
+<head>
+    <title>County and State Input</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
 <body>
     <h1>Enter a State Name</h1>
     <form id="stateForm">
@@ -20,11 +25,6 @@ Here is an interactive where you type in a state name and you get the number of 
     <div id="stateResult">
         <!-- The result for state data from the backend will be displayed here -->
     </div>
-    <div id="statePieChart">
-        <!-- The pie chart for state data will be displayed here -->
-    </div>
-
-
     <script>
     // State Form Submission
         document.getElementById('stateForm').addEventListener('submit', function (e) {
@@ -46,36 +46,11 @@ Here is an interactive where you type in a state name and you get the number of 
                 if (data.error) {
                     document.getElementById('stateResult').textContent = `Error: ${data.error}`;
                 } else {
-                    // Create the pie chart for state data
-                    const pieChartHtml = `
-                        <h2>Lung Cancer Data in ${data.State}</h2>
-                        <canvas id="stateLungCancerChart"></canvas>
+                    const resultHtml = `
+                        <p>Total Population: ${data.TotalPopulation}</p>
+                        <p>Total Deaths from Lung Cancer: ${data["Total amount of death from lung cancer"]}</p>
                     `;
-                    document.getElementById('statePieChart').innerHTML = pieChartHtml;
-
-                    new Chart(document.getElementById('stateLungCancerChart'), {
-                        type: 'pie',
-                        data: {
-                            labels: ['Total Deaths', 'Survivors'],
-                            datasets: [{
-                                data: [data['Total amount of death from lung cancer'], data['Total Population'] - data['Total amount of death from lung cancer']],
-                                backgroundColor: ['red', 'green'],
-                            }],
-                        },
-                        options: {
-                            tooltips: {
-                                callbacks: {
-                                    label: function (tooltipItem, data) {
-                                        return `${data.labels[tooltipItem.index]}: ${data.datasets[0].data[tooltipItem.index]}`;
-                                    },
-                                },
-                            },
-                            title: {
-                                display: true,
-                                text: `Lung Cancer Data in ${data.State}`,
-                            },
-                        },
-                    });
+                    document.getElementById('stateResult').innerHTML = resultHtml;
                 }
             })
             .catch(error => {
@@ -84,7 +59,9 @@ Here is an interactive where you type in a state name and you get the number of 
         });
     </script>
 </body>
+</html>
 
+    
 <!-- This section describes the interactive lung cancer data lookup by state, including the input form and JavaScript code for fetching data. -->
 
 The distribution of lung cancer cases can be grouped by space. Some areas are more disproportionately affected by lung cancer cases than others. Some areas, especially low-income or areas next to factories, have a sharp increase in lung cancer cases.

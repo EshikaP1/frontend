@@ -27,9 +27,6 @@
     <div id="stateResult">
         <!-- The result for state data from the backend will be displayed here -->
     </div>
-    <div id="statePieChart">
-        <!-- The pie chart for state data will be displayed here -->
-    </div>
 
     <script>
         // County Form Submission
