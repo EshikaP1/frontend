@@ -2,49 +2,81 @@
 layout: default
 title: Distrubution
 ---
+
+[**Home Page**](/index.md)
+
 ![Alt text](images/DISTRIBUTION.png)
 
 # <span style="color: #228B22"> Lung Cancer by State </span>
 Here is an interactive where you type in a state name and you get the number of lung cancer cases it has!
 
 <!-- Title and introductory information about an interactive lung cancer data lookup by state -->
-
-<head>
-    <title>State Input</title>
-</head>
 <body>
     <h1>Enter a State Name</h1>
     <form id="stateForm">
         <input type="text" id="stateInput" placeholder="Enter a state name">
         <button type="submit">Submit</button>
     </form>
-
-    <div id="result">
-        <!-- The result from the backend will be displayed here -->
+    <div id="stateResult">
+        <!-- The result for state data from the backend will be displayed here -->
+    </div>
+    <div id="statePieChart">
+        <!-- The pie chart for state data will be displayed here -->
     </div>
 
+
     <script>
-        // JavaScript code for handling the state data input form and fetching data from the backend
-
-        // Listen for the form submission
+    // State Form Submission
         document.getElementById('stateForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Get the state name from the input field
+            e.preventDefault();
             const stateName = document.getElementById('stateInput').value;
-
-            // Send the stateName to the backend using a fetch request
-            fetch('https://cancer0.stu.nighthawkcodingsociety.com/', {
-                method: 'POST',
+            fetch(`http://localhost:5000/api/data/cancer/cancer/state/${stateName}`, {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ state_name: stateName }),
+                }
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.status === 404) {
+                    return { error: "State data not found" };
+                }
+                return response.json();
+            })
             .then(data => {
-                // Display the result from the backend in the result div
-                document.getElementById('result').textContent = `Result from backend: ${data.result}`;
+                if (data.error) {
+                    document.getElementById('stateResult').textContent = `Error: ${data.error}`;
+                } else {
+                    // Create the pie chart for state data
+                    const pieChartHtml = `
+                        <h2>Lung Cancer Data in ${data.State}</h2>
+                        <canvas id="stateLungCancerChart"></canvas>
+                    `;
+                    document.getElementById('statePieChart').innerHTML = pieChartHtml;
+
+                    new Chart(document.getElementById('stateLungCancerChart'), {
+                        type: 'pie',
+                        data: {
+                            labels: ['Total Deaths', 'Survivors'],
+                            datasets: [{
+                                data: [data['Total amount of death from lung cancer'], data['Total Population'] - data['Total amount of death from lung cancer']],
+                                backgroundColor: ['red', 'green'],
+                            }],
+                        },
+                        options: {
+                            tooltips: {
+                                callbacks: {
+                                    label: function (tooltipItem, data) {
+                                        return `${data.labels[tooltipItem.index]}: ${data.datasets[0].data[tooltipItem.index]}`;
+                                    },
+                                },
+                            },
+                            title: {
+                                display: true,
+                                text: `Lung Cancer Data in ${data.State}`,
+                            },
+                        },
+                    });
+                }
             })
             .catch(error => {
                 console.error('Error:', error);

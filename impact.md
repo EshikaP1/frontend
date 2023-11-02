@@ -4,6 +4,8 @@ title: Your Impact
 ---
 ![Alt text](images/IMPACT.png)
 
+[**Home Page**](/index.md)
+
 <!-- Introduction and title of the page -->
 Climate change does not directly cause lung cancer. Instead, lung cancer primarily results from exposure to carcinogens, with tobacco smoke being the leading risk factor. However, climate change can indirectly influence lung cancer risk through several mechanisms:
 

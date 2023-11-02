@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Aerosol Data</title>
+    <title>County and State Input</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 </head>
 <body>
@@ -68,14 +69,16 @@
                             }],
                         },
                         options: {
-                            tooltips: {
-                                callbacks: {
-                                    label: function (tooltipItem, data) {
-                                        const dataset = data.datasets[tooltipItem.datasetIndex];
-                                        const total = dataset.data.reduce((prev, current) => prev + current);
-                                        const currentValue = dataset.data[tooltipItem.index];
-                                        const percentage = ((currentValue / total) * 100).toFixed(2);
-                                        return `${data.labels[tooltipItem.index]}: ${percentage}%`;
+                            plugins: {
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            const label = context.label || '';
+                                            const value = context.parsed || 0;
+                                            const total = context.dataset.data.reduce((acc, val) => acc + val, 0);
+                                            const percentage = ((value / total) * 100).toFixed(2);
+                                            return `${label}: ${percentage}%`;
+                                        },
                                     },
                                 },
                             },
@@ -112,36 +115,11 @@
                 if (data.error) {
                     document.getElementById('stateResult').textContent = `Error: ${data.error}`;
                 } else {
-                    // Create the pie chart for state data
-                    const pieChartHtml = `
-                        <h2>Lung Cancer Data in ${data.State}</h2>
-                        <canvas id="stateLungCancerChart"></canvas>
+                    const resultHtml = `
+                        <p>Total Population: ${data.TotalPopulation}</p>
+                        <p>Total Deaths from Lung Cancer: ${data["Total amount of death from lung cancer"]}</p>
                     `;
-                    document.getElementById('statePieChart').innerHTML = pieChartHtml;
-
-                    new Chart(document.getElementById('stateLungCancerChart'), {
-                        type: 'pie',
-                        data: {
-                            labels: ['Total Deaths', 'Survivors'],
-                            datasets: [{
-                                data: [data['Total amount of death from lung cancer'], data['Total Population'] - data['Total amount of death from lung cancer']],
-                                backgroundColor: ['red', 'green'],
-                            }],
-                        },
-                        options: {
-                            tooltips: {
-                                callbacks: {
-                                    label: function (tooltipItem, data) {
-                                        return `${data.labels[tooltipItem.index]}: ${data.datasets[0].data[tooltipItem.index]}`;
-                                    },
-                                },
-                            },
-                            title: {
-                                display: true,
-                                text: `Lung Cancer Data in ${data.State}`,
-                            },
-                        },
-                    });
+                    document.getElementById('stateResult').innerHTML = resultHtml;
                 }
             })
             .catch(error => {
