@@ -7,6 +7,12 @@ title: Student Blog
 
 Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.
 
+[**County api**](/county.md)
+ Our Api gives you aerosol data so you are able to check the days for which the air quality is good or bad in the year 2022. This is helpful for people who want to settle down in an area, especially if starting a family is a goal. 
+
+[**Lung Cancer Api**](/distribution.md)
+This api will demonstrate the lung cancer cases per population in a state. 
+
 [**Lung Cancer**](lungs.md)
 
 Climate change affects so many of us, and we want you to know the health impacts of this issue.
@@ -17,13 +23,7 @@ Lung Cancer is among the leading causes of death in people in the United States.
 
 [**How can you help?**](/impact.md)
 
-We will tell you ways YOU can help with this issue.
-
-[**Our api**](/county.md)
-This api will demonstrate how lung cancer affects states in the United States. Our Api can also give you aerosol data so you are able to check the days for which the air quality is good or bad in the year 2022. 
-
-[**Lung Cancer Api**](/distribution.md)
-This api will demonstrate the lung cancer cases per population in a state.  
+We will tell you ways YOU can help with this issue. 
 
 ![Alt text](images/istockphoto-1149674707-612x612.jpg)
 
