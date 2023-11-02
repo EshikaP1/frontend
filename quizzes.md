@@ -84,7 +84,7 @@ title: Quizzes
 
 <html>
 <head>
-    <title>How Climate Change friendly are you?</title>
+    <title>How Climate Change Friendly Are You?</title>
     <style>
         body {
             text-align: center;
