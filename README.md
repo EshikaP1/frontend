@@ -1,3 +1,21 @@
+Climate Change and Lung Cancer Project
+Overview
+This project investigates the relationship between climate change and lung cancer. It aims to understand how environmental factors associated with climate change may impact lung health and cancer rates. The project combines data analysis, scientific research, and public health implications to shed light on this critical issue.
+
+
+Project Background
+Climate change is a pressing global issue, with various environmental factors, such as air pollution and temperature changes, affecting public health. This project seeks to explore the potential link between climate change and lung cancer, a disease that poses significant health challenges worldwide.
+
+
+
+Conclusion
+This project contributes to our understanding of the potential link between climate change and lung cancer. It highlights the importance of addressing environmental issues to improve public health and reduce the burden of lung cancer.
+
+Contributors
+Aditi Bharadwaj, Samhita Lagisetti, Cindy Liang, and Eshika Pallapotu
+License
+This project is licensed under the [Your License], which is open-source and encourages collaboration and further research. See the LICENSE file for details.
+
 ## Blog site using GitHub Pages and Jekyll
 > This site is intended for Students.   This is to record plans, complete hacks, and do work for your learnings.
 - This can be customized to support computer science as you work through pathway (JavaScript, Python/Flask, Java/Spring)
