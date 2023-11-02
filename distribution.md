@@ -2,15 +2,19 @@
 layout: default
 title: Distrubution
 ---
+
+[**Home Page**](/index.md)
+
 ![Alt text](images/DISTRIBUTION.png)
 
 # <span style="color: #228B22"> Lung Cancer by State </span>
 Here is an interactive where you type in a state name and you get the number of lung cancer cases it has!
 
 <!-- Title and introductory information about an interactive lung cancer data lookup by state -->
-
+<html>
 <head>
-    <title>State Input</title>
+    <title>County and State Input</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 </head>
 <body>
     <h1>Enter a State Name</h1>
@@ -18,33 +22,36 @@ Here is an interactive where you type in a state name and you get the number of 
         <input type="text" id="stateInput" placeholder="Enter a state name">
         <button type="submit">Submit</button>
     </form>
-
-    <div id="result">
-        <!-- The result from the backend will be displayed here -->
+    <div id="stateResult">
+        <!-- The result for state data from the backend will be displayed here -->
     </div>
-
     <script>
-        // JavaScript code for handling the state data input form and fetching data from the backend
-
-        // Listen for the form submission
+    // State Form Submission
         document.getElementById('stateForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Get the state name from the input field
+            e.preventDefault();
             const stateName = document.getElementById('stateInput').value;
-
-            // Send the stateName to the backend using a fetch request
-            fetch('https://cancer0.stu.nighthawkcodingsociety.com/', {
-                method: 'POST',
+            fetch(`http://localhost:5000/api/data/cancer/cancer/state/${stateName}`, {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ state_name: stateName }),
+                }
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.status === 404) {
+                    return { error: "State data not found" };
+                }
+                return response.json();
+            })
             .then(data => {
-                // Display the result from the backend in the result div
-                document.getElementById('result').textContent = `Result from backend: ${data.result}`;
+                if (data.error) {
+                    document.getElementById('stateResult').textContent = `Error: ${data.error}`;
+                } else {
+                    const resultHtml = `
+                        <p>Total Population: ${data.TotalPopulation}</p>
+                        <p>Total Deaths from Lung Cancer: ${data["Total amount of death from lung cancer"]}</p>
+                    `;
+                    document.getElementById('stateResult').innerHTML = resultHtml;
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -52,7 +59,9 @@ Here is an interactive where you type in a state name and you get the number of 
         });
     </script>
 </body>
+</html>
 
+    
 <!-- This section describes the interactive lung cancer data lookup by state, including the input form and JavaScript code for fetching data. -->
 
 The distribution of lung cancer cases can be grouped by space. Some areas are more disproportionately affected by lung cancer cases than others. Some areas, especially low-income or areas next to factories, have a sharp increase in lung cancer cases.

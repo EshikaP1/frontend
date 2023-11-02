@@ -2,14 +2,18 @@
 layout: default
 title: Student Blog
 ---
+
 # Lung Cancer and Climate Change
 
 Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.
 
-[About](about.html) | [Causes](causes.html) | [Solutions](solutions.html)
+[**County api**](/county.md)
+ Our Api gives you aerosol data so you are able to check the days for which the air quality is good or bad in the year 2022. This is helpful for people who want to settle down in an area, especially if starting a family is a goal. 
 
-&copy; 2023 Lung Cancer and Climate Change
+[**Lung Cancer Api**](/distribution.md)
+This api will demonstrate the lung cancer cases per population in a state. 
 
+<<<<<<< HEAD
 ```html
 
 <html>
@@ -22,75 +26,19 @@ Did you know that lung cancer is caused by climate change? On this website, we w
         <h1>Lung Cancer and Climate Change</h1>
         <p>Did you know that lung cancer is caused by climate change? On this website, we will tell you all about lung cancer and climate change and how they are linked to each other.</p>
     </header>
+=======
+[**Lung Cancer**](lungs.md)
+>>>>>>> 5cc0670fbb68c9407bcd961b2f9e0a5fd337db0d
 
-    <section class="button-container">
-        <a href="about.html" class="button">About</a>
-        <a href="causes.html" class="button">Causes</a>
-        <a href "solutions.html" class="button">Solutions</a>
-    </section>
+Climate change affects so many of us, and we want you to know the health impacts of this issue.
 
-    <footer>
-        <p>&copy; 2023 Lung Cancer and Climate Change</p>
-    </footer>
-</body>
-</html>
+[**Climate Change**](/climate.md)
 
-```css
-```css
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-}
+Lung Cancer is among the leading causes of death in people in the United States. We want to spread awareness about lung cancer as not many people know of this issue.
 
-header {
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    padding: 50px;
-}
+[**How can you help?**](/impact.md)
 
-h1 {
-    font-size: 48px;
-    margin: 0;
-    color: #333;
-}
+We will tell you ways YOU can help with this issue. 
 
-p {
-    font-size: 18px;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-}
+![Alt text](images/istockphoto-1149674707-612x612.jpg)
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
-}
-
-.button {
-    background-color: #4CAF50;
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 10px;
-    padding: 15px 30px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #45A844;
-}
-
-footer {
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    padding: 20px;
-    color: #333;
-}
